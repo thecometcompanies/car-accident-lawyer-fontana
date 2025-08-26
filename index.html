@@ -61,14 +61,22 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 3rem;
-            align-items: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
         
         @media (min-width: 968px) {
             .hero-content {
                 grid-template-columns: 1.2fr 1fr;
                 gap: 4rem;
+                align-items: flex-start;
             }
+        }
+        
+        .hero-text {
+            position: sticky;
+            top: 2rem;
+            align-self: flex-start;
         }
         
         .hero-text h1 {
@@ -188,12 +196,13 @@
         .step-indicator__item {
             padding: 0.75rem 1.5rem;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             color: rgba(255, 255, 255, 0.6);
             font-weight: 600;
             font-size: 0.875rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
         
         .step-indicator__item.active {
