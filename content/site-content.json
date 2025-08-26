@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "Fontana Car Accident Lawyer - Free Consultation | Expert Personal Injury Attorney",
+    "description": "Experienced Fontana car accident lawyers. Free consultation, no fees unless we win. Call (909) 555-0123 for immediate legal help.",
+    "keywords": "fontana car accident lawyer, car accident attorney san bernardino county, personal injury lawyer fontana"
+  },
+  "hero": {
+    "headline": "Injured in an Accident? Get the Compensation You Deserve",
+    "subheadline": "Free consultation with experienced Fontana car accident lawyers. No fees unless we win your case.",
+    "primaryCTA": {
+      "text": "Start Free Case Evaluation",
+      "action": "scroll-to-form"
+    },
+    "secondaryCTA": {
+      "text": "Call (909) 555-0123",
+      "action": "tel:+19095550123"
+    }
+  },
+  "form": {
+    "title": "Free Case Evaluation",
+    "steps": {
+      "1": {
+        "title": "Contact Information",
+        "subtitle": "Start your free consultation - we'll contact you within 1 hour.",
+        "fields": [
+          {
+            "id": "email",
+            "label": "Email Address",
+            "type": "email",
+            "required": true,
+            "validation": "email"
+          },
+          {
+            "id": "phone",
+            "label": "Phone Number",
+            "type": "tel",
+            "required": true,
+            "validation": "phone"
+          },
+          {
+            "id": "preferredContact",
+            "label": "Preferred Contact Method",
+            "type": "radio",
+            "required": true,
+            "options": [
+              {"value": "email", "label": "Email"},
+              {"value": "phone", "label": "Phone Call"},
+              {"value": "text", "label": "Text Message"}
+            ]
+          }
+        ],
+        "button": {
+          "text": "Continue to Case Details →"
+        }
+      },
+      "2": {
+        "title": "Tell Us About Your Case",
+        "subtitle": "Help us understand your situation for the best legal advice.",
+        "fields": [
+          {
+            "id": "firstName",
+            "label": "First Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "lastName",
+            "label": "Last Name", 
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "incidentDate",
+            "label": "Date of Incident",
+            "type": "date",
+            "required": true
+          },
+          {
+            "id": "accidentType",
+            "label": "Type of Accident",
+            "type": "select",
+            "required": true,
+            "options": [
+              {"value": "", "label": "Select accident type..."},
+              {"value": "motor-vehicle", "label": "Motor Vehicle Accident"},
+              {"value": "motorcycle", "label": "Motorcycle Accident"},
+              {"value": "pedestrian", "label": "Pedestrian Accident"},
+              {"value": "bicycle", "label": "Bicycle Accident"},
+              {"value": "slip-fall", "label": "Slip and Fall"},
+              {"value": "other", "label": "Other"}
+            ]
+          },
+          {
+            "id": "injuryDescription",
+            "label": "Describe Your Injuries",
+            "type": "textarea",
+            "required": true,
+            "minLength": 50,
+            "placeholder": "Please describe your injuries and how they occurred..."
+          },
+          {
+            "id": "medicalTreatment",
+            "label": "Medical Treatment Received (check all that apply)",
+            "type": "checkbox",
+            "options": [
+              {"value": "emergency-room", "label": "Emergency Room"},
+              {"value": "hospitalization", "label": "Hospitalization"},
+              {"value": "physical-therapy", "label": "Physical Therapy"},
+              {"value": "ongoing", "label": "Ongoing Treatment"},
+              {"value": "none", "label": "No Treatment Yet"}
+            ]
+          },
+          {
+            "id": "hasInsurance",
+            "label": "Insurance Information",
+            "type": "select",
+            "required": true,
+            "options": [
+              {"value": "", "label": "Select..."},
+              {"value": "yes", "label": "Yes, I have insurance"},
+              {"value": "no", "label": "No insurance"},
+              {"value": "unsure", "label": "Unsure"}
+            ]
+          },
+          {
+            "id": "policeReport",
+            "label": "Police Report Filed",
+            "type": "radio",
+            "required": true,
+            "options": [
+              {"value": "yes", "label": "Yes"},
+              {"value": "no", "label": "No"},
+              {"value": "unknown", "label": "Unknown"}
+            ]
+          },
+          {
+            "id": "faultAssignment",
+            "label": "Fault Assignment",
+            "type": "radio",
+            "required": true,
+            "options": [
+              {"value": "other", "label": "Other party at fault"},
+              {"value": "mutual", "label": "Mutual fault"},
+              {"value": "unsure", "label": "Unsure"},
+              {"value": "me", "label": "I may be at fault"}
+            ]
+          },
+          {
+            "id": "additionalDetails",
+            "label": "Additional Details (Optional)",
+            "type": "textarea",
+            "maxLength": 1000,
+            "placeholder": "Any additional information about your case..."
+          }
+        ],
+        "buttons": {
+          "back": "← Back",
+          "submit": "Submit Case Information"
+        }
+      }
+    }
+  },
+  "trustSignals": {
+    "title": "Why Choose Our Fontana Car Accident Lawyers?",
+    "items": [
+      {
+        "icon": "⚖️",
+        "title": "No Win, No Fee",
+        "description": "We work on a contingency fee basis - you don't pay unless we win your case."
+      },
+      {
+        "icon": "💬",
+        "title": "Free Consultation",
+        "description": "Get expert legal advice with no upfront costs or obligations."
+      },
+      {
+        "icon": "🏛️",
+        "title": "Local Expertise", 
+        "description": "Deep knowledge of Fontana and San Bernardino County courts and laws."
+      },
+      {
+        "icon": "🏆",
+        "title": "Proven Results",
+        "description": "Track record of successful settlements and verdicts for our clients."
+      }
+    ]
+  },
+  "contact": {
+    "phone": "(909) 555-0123",
+    "email": "legal@fontanalawyers.com",
+    "address": {
+      "street": "123 Main Street",
+      "city": "Fontana",
+      "state": "CA",
+      "zip": "92335"
+    }
+  },
+  "legal": {
+    "firmName": "Fontana Car Accident Lawyers",
+    "disclaimers": [
+      "No attorney-client relationship is formed by using this website.",
+      "Results may vary depending on your particular facts and legal circumstances.",
+      "Attorney advertising. Prior results do not guarantee a similar outcome."
+    ]
+  }
+}

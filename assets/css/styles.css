@@ -1,0 +1,433 @@
+/* Additional CSS for Performance Optimization - Robinhood Style */
+/* This file is loaded after critical CSS for non-essential styles */
+
+/* Trust Signals Section */
+.trust-signals {
+    padding: 6rem 1rem;
+    background: #0d0d0d;
+    position: relative;
+}
+
+.trust-signals::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 200, 83, 0.05) 0%, transparent 70%),
+        radial-gradient(circle at 80% 20%, rgba(0, 200, 83, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.trust-signals h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, #00c853 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.trust-item {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.trust-item:hover::before {
+    opacity: 1;
+}
+
+.trust-item:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 200, 83, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.trust-item h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.trust-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.trust-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #00c853 0%, #00e676 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-size: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 200, 83, 0.3);
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover .trust-icon {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0 15px 40px rgba(0, 200, 83, 0.4);
+}
+
+/* Form Enhancements - Robinhood Style */
+.form-step h3 {
+    color: #ffffff;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.form-step > p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Enhanced Form Controls - Robinhood Style */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+.form-group label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.radio-item label,
+.checkbox-item label {
+    margin-bottom: 0;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+}
+
+/* Button Enhancements - Robinhood Style */
+.btn {
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.4s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    background-color: inherit;
+}
+
+/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Step Indicator Enhancements */
+.step-indicator {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.step-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e9ecef;
+    z-index: 1;
+}
+
+.step-indicator__item {
+    position: relative;
+    z-index: 2;
+    background: white;
+    border: 2px solid #e9ecef;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.step-indicator__item.active {
+    background: #1e3c72;
+    border-color: #1e3c72;
+    color: white;
+}
+
+/* Success Message Styling - Robinhood Style */
+.success-message {
+    background: rgba(0, 200, 83, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 200, 83, 0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 200, 83, 0.1);
+}
+
+.success-message h2 {
+    color: #00c853;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.success-message ul {
+    text-align: left;
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.success-message ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions .btn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .trust-signals h2 {
+        font-size: 2rem;
+    }
+    
+    .trust-item {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 1rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+    
+    .contact-form {
+        padding: 1rem;
+    }
+    
+    .step-indicator {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .step-indicator::before {
+        display: none;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .hero {
+        background: white;
+        color: black;
+        min-height: auto;
+    }
+    
+    .btn,
+    .form-actions {
+        display: none;
+    }
+    
+    .contact-form {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .hero {
+        background: #000;
+        color: #fff;
+    }
+    
+    .btn--primary {
+        background: #000;
+        color: #fff;
+        border: 2px solid #fff;
+    }
+    
+    .contact-form {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Dark Mode Support - Already Applied */
+/* The site is designed with dark theme as primary */
+@media (prefers-color-scheme: light) {
+    /* Optional: Add light mode overrides here if needed */
+}
+
+/* Accessibility Enhancements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus Management */
+.focus-trap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+/* Performance Optimizations */
+.hero {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.btn {
+    will-change: transform;
+}
+
+.trust-item {
+    will-change: transform;
+}
+
+/* Lazy Loading Support */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}

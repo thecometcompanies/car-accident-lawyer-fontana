@@ -1,0 +1,20 @@
+{
+  "name": "fontana-car-accident-lawyer",
+  "version": "1.0.0",
+  "description": "One-page attorney website with multi-step personal injury intake form",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve public",
+    "build": "mkdir -p public && cp index.html public/ && cp -r assets public/ && cp -r content public/",
+    "start": "npx serve public"
+  },
+  "keywords": [
+    "attorney",
+    "personal-injury",
+    "fontana",
+    "car-accident",
+    "lawyer"
+  ],
+  "author": "",
+  "license": "ISC"
+}

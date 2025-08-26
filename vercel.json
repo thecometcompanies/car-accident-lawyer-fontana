@@ -1,0 +1,31 @@
+{
+  "functions": {
+    "api/webhooks/step1.js": {
+      "maxDuration": 10
+    },
+    "api/webhooks/step2.js": {
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/intake-step1",
+      "destination": "/api/webhooks/step1"
+    },
+    {
+      "source": "/api/intake-step2", 
+      "destination": "/api/webhooks/step2"
+    }
+  ]
+}
