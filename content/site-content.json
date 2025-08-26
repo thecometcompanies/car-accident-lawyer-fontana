@@ -216,7 +216,117 @@
         "experience": "15+ years in personal injury law",
         "education": "UCLA School of Law, J.D.",
         "specialties": ["Insurance Negotiations", "Medical Malpractice", "Premises Liability"],
-        "bio": "Sarah's strategic approach to insurance negotiations has resulted in settlements averaging 3.5x higher than initial offers. She ensures clients receive full compensation for medical expenses and pain and suffering."
+        "bio": "Sarah's strategic approach to insurance negotiations has result settlements averaging 3.5x higher than initial offers. She ensures clients receive full compensation for medical expenses and pain and suffering."
+      }
+    ]
+  },
+  "cities": {
+    "title": "Complete San Bernardino County Coverage",
+    "subtitle": "Our attorney network serves all major cities with local expertise",
+    "areas": [
+      {
+        "name": "Fontana",
+        "active": true,
+        "population": "208,393",
+        "courts": "Rancho Cucamonga District Court",
+        "description": "Our primary service area with extensive local knowledge of traffic patterns, accident hotspots, and court procedures.",
+        "highlights": [
+          "500+ cases successfully matched",
+          "Average 45-minute response time",
+          "Local traffic accident expertise",
+          "Direct courthouse relationships"
+        ]
+      },
+      {
+        "name": "Rancho Cucamonga",
+        "active": false,
+        "population": "177,751",
+        "courts": "Rancho Cucamonga District Court",
+        "description": "Major commercial hub with heavy traffic on I-10 and I-210 corridors. Our attorneys specialize in complex intersection accidents.",
+        "highlights": [
+          "High-volume traffic accident cases",
+          "Commercial vehicle expertise",
+          "Freeway accident specialists",
+          "Local medical network access"
+        ]
+      },
+      {
+        "name": "Ontario",
+        "active": false,
+        "population": "175,265",
+        "courts": "West District Court",
+        "description": "Airport vicinity with unique aviation and commercial trucking accident scenarios requiring specialized legal knowledge.",
+        "highlights": [
+          "Airport-related accident expertise",
+          "Commercial trucking cases",
+          "International Airport proximity",
+          "Specialized injury treatment centers"
+        ]
+      },
+      {
+        "name": "San Bernardino",
+        "active": false,
+        "population": "222,101",
+        "courts": "San Bernardino Superior Court",
+        "description": "County seat with direct access to Superior Court. Our attorneys handle complex litigation and appeals.",
+        "highlights": [
+          "Superior Court litigation",
+          "Complex case specialists",
+          "Appeals court experience",
+          "Government entity cases"
+        ]
+      },
+      {
+        "name": "Rialto",
+        "active": false,
+        "population": "103,132",
+        "courts": "Fontana District Court",
+        "description": "Industrial corridor with heavy truck traffic. Specialized experience in commercial vehicle and workplace accidents.",
+        "highlights": [
+          "Industrial accident cases",
+          "Heavy truck collisions",
+          "Workplace injury expertise",
+          "Railroad crossing accidents"
+        ]
+      },
+      {
+        "name": "Colton",
+        "active": false,
+        "population": "54,215",
+        "courts": "San Bernardino District Court",
+        "description": "Strategic location near major freeways with unique pedestrian and bicycle accident challenges in urban areas.",
+        "highlights": [
+          "Pedestrian accident specialists",
+          "Bicycle injury cases",
+          "Urban intersection expertise",
+          "Community-focused representation"
+        ]
+      },
+      {
+        "name": "Upland",
+        "active": false,
+        "population": "79,040",
+        "courts": "Rancho Cucamonga District Court",
+        "description": "Residential community with school zone accidents and suburban intersection challenges requiring local knowledge.",
+        "highlights": [
+          "School zone accident cases",
+          "Suburban intersection expertise",
+          "Residential area specialists",
+          "Family-focused legal services"
+        ]
+      },
+      {
+        "name": "Chino",
+        "active": false,
+        "population": "91,403",
+        "courts": "Chino District Court",
+        "description": "Agricultural and residential mix with unique rural road and agricultural vehicle accident scenarios.",
+        "highlights": [
+          "Rural road accident cases",
+          "Agricultural vehicle expertise",
+          "Mixed-use area specialists",
+          "Local community knowledge"
+        ]
       }
     ]
   },

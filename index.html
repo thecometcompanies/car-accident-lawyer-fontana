@@ -1175,6 +1175,140 @@
                 closeModal();
             }
         });
+
+        // City Tab Functionality
+        const cityData = {
+            'fontana': {
+                population: '208,393',
+                courts: 'Rancho Cucamonga District Court',
+                description: 'Our primary service area with extensive local knowledge of traffic patterns, accident hotspots, and court procedures.',
+                highlights: [
+                    '500+ cases successfully matched',
+                    'Average 45-minute response time', 
+                    'Local traffic accident expertise',
+                    'Direct courthouse relationships'
+                ]
+            },
+            'rancho-cucamonga': {
+                population: '177,751',
+                courts: 'Rancho Cucamonga District Court',
+                description: 'Major commercial hub with heavy traffic on I-10 and I-210 corridors. Our attorneys specialize in complex intersection accidents.',
+                highlights: [
+                    'High-volume traffic accident cases',
+                    'Commercial vehicle expertise',
+                    'Freeway accident specialists',
+                    'Local medical network access'
+                ]
+            },
+            'ontario': {
+                population: '175,265',
+                courts: 'West District Court',
+                description: 'Airport vicinity with unique aviation and commercial trucking accident scenarios requiring specialized legal knowledge.',
+                highlights: [
+                    'Airport-related accident expertise',
+                    'Commercial trucking cases',
+                    'International Airport proximity',
+                    'Specialized injury treatment centers'
+                ]
+            },
+            'san-bernardino': {
+                population: '222,101',
+                courts: 'San Bernardino Superior Court',
+                description: 'County seat with direct access to Superior Court. Our attorneys handle complex litigation and appeals.',
+                highlights: [
+                    'Superior Court litigation',
+                    'Complex case specialists',
+                    'Appeals court experience',
+                    'Government entity cases'
+                ]
+            },
+            'rialto': {
+                population: '103,132',
+                courts: 'Fontana District Court',
+                description: 'Industrial corridor with heavy truck traffic. Specialized experience in commercial vehicle and workplace accidents.',
+                highlights: [
+                    'Industrial accident cases',
+                    'Heavy truck collisions',
+                    'Workplace injury expertise',
+                    'Railroad crossing accidents'
+                ]
+            },
+            'colton': {
+                population: '54,215',
+                courts: 'San Bernardino District Court',
+                description: 'Strategic location near major freeways with unique pedestrian and bicycle accident challenges in urban areas.',
+                highlights: [
+                    'Pedestrian accident specialists',
+                    'Bicycle injury cases',
+                    'Urban intersection expertise',
+                    'Community-focused representation'
+                ]
+            },
+            'upland': {
+                population: '79,040',
+                courts: 'Rancho Cucamonga District Court',
+                description: 'Residential community with school zone accidents and suburban intersection challenges requiring local knowledge.',
+                highlights: [
+                    'School zone accident cases',
+                    'Suburban intersection expertise',
+                    'Residential area specialists',
+                    'Family-focused legal services'
+                ]
+            },
+            'chino': {
+                population: '91,403',
+                courts: 'Chino District Court',
+                description: 'Agricultural and residential mix with unique rural road and agricultural vehicle accident scenarios.',
+                highlights: [
+                    'Rural road accident cases',
+                    'Agricultural vehicle expertise',
+                    'Mixed-use area specialists',
+                    'Local community knowledge'
+                ]
+            }
+        };
+
+        function switchCity(cityKey) {
+            // Update active tab styling
+            document.querySelectorAll('.city-tab').forEach(tab => {
+                tab.style.background = '#2a2a2a';
+                tab.style.color = '#fff';
+                tab.style.border = '1px solid #444';
+                tab.style.boxShadow = 'none';
+                tab.classList.remove('active');
+            });
+
+            // Activate clicked tab
+            const activeTab = document.querySelector(`[data-city="${cityKey}"]`);
+            activeTab.style.background = 'linear-gradient(45deg, #00c853, #4caf50)';
+            activeTab.style.color = '#000';
+            activeTab.style.border = 'none';
+            activeTab.style.boxShadow = '0 4px 15px rgba(0, 200, 83, 0.3)';
+            activeTab.classList.add('active');
+
+            // Update content
+            const city = cityData[cityKey];
+            if (city) {
+                document.getElementById('city-population').textContent = city.population;
+                document.getElementById('city-courts').textContent = city.courts;
+                document.getElementById('city-description').textContent = city.description;
+
+                // Update highlights
+                const highlightsContainer = document.getElementById('city-highlights');
+                highlightsContainer.innerHTML = city.highlights.map(highlight => `
+                    <div style="background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                        <div style="color: #00c853; font-size: 0.85rem; font-weight: 600;">✓ ${highlight}</div>
+                    </div>
+                `).join('');
+
+                // Smooth animation
+                const cityInfo = document.querySelector('.city-info');
+                cityInfo.style.opacity = '0.7';
+                setTimeout(() => {
+                    cityInfo.style.opacity = '1';
+                }, 150);
+            }
+        }
     </script>
 
     <!-- Premium Local Fontana Section -->
@@ -1289,20 +1423,61 @@
                 </div>
             </div>
 
-            <!-- Service Areas -->
-            <div class="service-areas" style="background: #1a1a1a; border-radius: 20px; padding: 4rem 2rem; text-align: center; border: 2px solid #333;">
-                <h3 style="color: #fff; font-size: 2.2rem; font-weight: 700; margin-bottom: 3rem; text-transform: uppercase;">Complete San Bernardino County Coverage</h3>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
-                    <span class="area-tag" style="background: linear-gradient(45deg, #00c853, #4caf50); color: #000; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);">Fontana</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">Rancho Cucamonga</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">Ontario</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">San Bernardino</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">Rialto</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">Colton</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">Upland</span>
-                    <span class="area-tag" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444;">Chino</span>
+            <!-- Service Areas with Interactive Tabs -->
+            <div class="service-areas" style="background: #1a1a1a; border-radius: 20px; padding: 4rem 2rem; border: 2px solid #333;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h3 style="color: #fff; font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase;">Complete San Bernardino County Coverage</h3>
+                    <p style="color: #ccc; font-size: 1.1rem;">Our attorney network serves all major cities with local expertise</p>
                 </div>
-                <p style="color: #ccc; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Whether your accident occurred on city streets, highways, or commercial areas, our network attorneys know the local landscape and legal requirements.</p>
+
+                <!-- City Tabs -->
+                <div class="city-tabs" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-bottom: 3rem;">
+                    <button class="city-tab active" onclick="switchCity('fontana')" data-city="fontana" style="background: linear-gradient(45deg, #00c853, #4caf50); color: #000; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3); border: none; cursor: pointer; transition: all 0.3s ease;">Fontana</button>
+                    <button class="city-tab" onclick="switchCity('rancho-cucamonga')" data-city="rancho-cucamonga" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">Rancho Cucamonga</button>
+                    <button class="city-tab" onclick="switchCity('ontario')" data-city="ontario" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">Ontario</button>
+                    <button class="city-tab" onclick="switchCity('san-bernardino')" data-city="san-bernardino" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">San Bernardino</button>
+                    <button class="city-tab" onclick="switchCity('rialto')" data-city="rialto" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">Rialto</button>
+                    <button class="city-tab" onclick="switchCity('colton')" data-city="colton" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">Colton</button>
+                    <button class="city-tab" onclick="switchCity('upland')" data-city="upland" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">Upland</button>
+                    <button class="city-tab" onclick="switchCity('chino')" data-city="chino" style="background: #2a2a2a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; font-size: 0.95rem; border: 1px solid #444; cursor: pointer; transition: all 0.3s ease;">Chino</button>
+                </div>
+
+                <!-- Dynamic City Content -->
+                <div class="city-content" style="max-width: 800px; margin: 0 auto;">
+                    <div class="city-info" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); border-radius: 16px; padding: 3rem; border: 2px solid #333;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;" class="city-stats">
+                            <div>
+                                <div style="color: #00c853; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Population</div>
+                                <div style="color: #fff; font-size: 1.5rem; font-weight: 700;" id="city-population">208,393</div>
+                            </div>
+                            <div>
+                                <div style="color: #00c853; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;">Court District</div>
+                                <div style="color: #fff; font-size: 1.1rem; font-weight: 600;" id="city-courts">Rancho Cucamonga District Court</div>
+                            </div>
+                        </div>
+                        
+                        <p style="color: #ccc; font-size: 1.1rem; line-height: 1.6; margin-bottom: 2rem; text-align: center;" id="city-description">Our primary service area with extensive local knowledge of traffic patterns, accident hotspots, and court procedures.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;" id="city-highlights">
+                            <div style="background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                                <div style="color: #00c853; font-size: 0.85rem; font-weight: 600;">✓ 500+ cases successfully matched</div>
+                            </div>
+                            <div style="background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                                <div style="color: #00c853; font-size: 0.85rem; font-weight: 600;">✓ Average 45-minute response time</div>
+                            </div>
+                            <div style="background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                                <div style="color: #00c853; font-size: 0.85rem; font-weight: 600;">✓ Local traffic accident expertise</div>
+                            </div>
+                            <div style="background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 8px; padding: 1rem; text-align: center;">
+                                <div style="color: #00c853; font-size: 0.85rem; font-weight: 600;">✓ Direct courthouse relationships</div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <button onclick="openModal()" class="cta-modal-btn" style="font-size: 1.1rem !important; padding: 1rem 2rem !important;">Get Local Attorney Help</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
