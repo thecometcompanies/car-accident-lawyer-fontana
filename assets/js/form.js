@@ -503,7 +503,7 @@ class MultiStepForm {
                     </ul>
                 </div>
                 <p style="text-align: center; color: #ffffff;"><strong>Need immediate assistance?</strong><br>
-                Call us directly: <a href="tel:+13106225880" style="color: #00c853; text-decoration: none; font-weight: bold;">(310) 622-5880</a></p>
+                Call us directly: <a href="tel:+1XXXXXXXXXX" style="color: #00c853; text-decoration: none; font-weight: bold;">(XXX) XXX-XXXX</a></p>
             </div>
         `;
     }
