@@ -59,7 +59,14 @@ class ContentManager {
         // Update headline
         const headline = document.querySelector('.hero-text h1');
         if (headline) {
-            headline.textContent = hero.headline;
+            // Replace \n with <br> for proper line breaks
+            headline.innerHTML = hero.headline.replace(/\n/g, '<br>');
+        }
+        
+        // Update subtitle (h2)
+        const subtitle = document.querySelector('.hero-text h2');
+        if (subtitle && hero.subtitle) {
+            subtitle.textContent = hero.subtitle;
         }
         
         // Update subheadline

@@ -106,14 +106,7 @@ class MultiStepForm {
             }
         });
         
-        // Special validation for step 2
-        if (stepNumber === 2) {
-            const injuryDescription = document.getElementById('injuryDescription');
-            if (injuryDescription.value.length < 50) {
-                this.showError(injuryDescription, 'Please provide at least 50 characters describing your injuries');
-                isValid = false;
-            }
-        }
+        // Special validation for step 2 removed - no length limit
         
         return isValid;
     }
@@ -219,6 +212,7 @@ class MultiStepForm {
                 }
                 if (input.checked) {
                     this.formData[input.name].push(input.value);
+                    console.log(`✅ Checkbox checked: ${input.name} = ${input.value}`);
                 }
             } else if (input.type === 'radio') {
                 if (input.checked) {
@@ -323,12 +317,16 @@ class MultiStepForm {
     
     async handleSubmit(e) {
         e.preventDefault();
+        console.log('🚀 FORM SUBMIT TRIGGERED');
         
         if (!this.validateStep(2)) {
+            console.log('❌ Step 2 validation failed');
             return;
         }
         
+        console.log('✅ Step 2 validation passed');
         this.collectStepData(2);
+        console.log('📦 Final form data before webhook:', this.formData);
         
         const submitBtn = e.target.querySelector('button[type="submit"]');
         const loading = submitBtn.querySelector('.loading');
@@ -336,6 +334,7 @@ class MultiStepForm {
         submitBtn.disabled = true;
         loading.classList.add('active');
         
+        console.log('🔄 Sending final webhook...');
         await this.sendFinalWebhook();
         
         // Show success message
@@ -343,12 +342,19 @@ class MultiStepForm {
     }
     
     async sendFinalWebhook() {
+        console.log('📡 sendFinalWebhook called');
         const webhookUrl = this.form.getAttribute('data-step-webhook-2');
-        if (!webhookUrl) return;
+        const externalWebhookUrl = this.form.getAttribute('data-external-webhook-2');
+        
+        console.log('🔗 Webhook URLs:', {
+            internal: webhookUrl,
+            external: externalWebhookUrl
+        });
         
         const caseScore = this.calculateCaseScore();
         
-        const payload = {
+        // Internal webhook payload
+        const internalPayload = {
             step: 2,
             timestamp: new Date().toISOString(),
             completeLead: {
@@ -380,20 +386,65 @@ class MultiStepForm {
             }
         };
         
-        try {
-            const response = await fetch(webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-            
-            if (!response.ok) {
-                console.warn('Final webhook failed:', response.status);
+        // External webhook payload - includes email from step 1 for linking
+        const externalPayload = {
+            step: 2,
+            email: this.formData.email, // Critical: links to step 1 submission
+            firstName: this.formData.firstName,
+            lastName: this.formData.lastName,
+            phone: this.formData.phone,
+            preferredContact: this.formData.preferredContact,
+            incidentDate: this.formData.incidentDate,
+            accidentType: this.formData.accidentType,
+            injuryDescription: this.formData.injuryDescription,
+            medicalTreatment: this.formData.medicalTreatment || [],
+            hasInsurance: this.formData.hasInsurance,
+            policeReport: this.formData.policeReport,
+            faultAssignment: this.formData.faultAssignment,
+            additionalDetails: this.formData.additionalDetails || ''
+        };
+        
+        // Send internal webhook
+        if (webhookUrl) {
+            try {
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(internalPayload)
+                });
+                
+                if (!response.ok) {
+                    console.warn('Internal webhook failed:', response.status);
+                }
+            } catch (error) {
+                console.warn('Internal webhook error:', error);
             }
-        } catch (error) {
-            console.warn('Final webhook error:', error);
+        }
+        
+        // Send external webhook
+        if (externalWebhookUrl) {
+            console.log('Sending step 2 to external webhook:', externalWebhookUrl);
+            console.log('Step 2 payload:', externalPayload);
+            
+            try {
+                const response = await fetch(externalWebhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'User-Agent': 'AccidentLawyerFontana/1.0'
+                    },
+                    body: JSON.stringify(externalPayload)
+                });
+                
+                console.log('External webhook response:', response.status, response.statusText);
+                const responseText = await response.text();
+                console.log('External webhook response body:', responseText);
+            } catch (error) {
+                console.error('External webhook error:', error);
+            }
         }
     }
     
@@ -439,20 +490,20 @@ class MultiStepForm {
     showSuccessMessage() {
         const formContainer = document.querySelector('.contact-form');
         formContainer.innerHTML = `
-            <div style="text-align: center; padding: 2rem;">
-                <h2 style="color: #1e3c72; margin-bottom: 1rem;">Thank You!</h2>
-                <p style="margin-bottom: 2rem;">Your case information has been submitted successfully. Our legal team will contact you within 1 hour using your preferred contact method.</p>
-                <div style="background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 5px; padding: 1rem; margin-bottom: 1rem;">
-                    <strong>What happens next:</strong>
-                    <ul style="text-align: left; margin-top: 0.5rem; padding-left: 1rem;">
-                        <li>Legal team review (within 1 hour)</li>
-                        <li>Initial case assessment</li>
-                        <li>Free consultation scheduling</li>
-                        <li>No fees unless we win</li>
+            <div class="success-message">
+                <h2 style="color: #00c853; margin-bottom: 1rem; text-align: center;">Thank You!</h2>
+                <p style="margin-bottom: 2rem; text-align: center; color: #ffffff;">Your case information has been submitted successfully. Our legal team will contact you within 1 hour using your preferred contact method.</p>
+                <div style="background-color: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <strong style="color: #00c853; display: block; margin-bottom: 1rem;">What happens next:</strong>
+                    <ul style="text-align: left; margin: 0; padding-left: 1.5rem; color: rgba(255, 255, 255, 0.9);">
+                        <li style="margin-bottom: 0.5rem;">Legal team review (within 1 hour)</li>
+                        <li style="margin-bottom: 0.5rem;">Initial case assessment</li>
+                        <li style="margin-bottom: 0.5rem;">Free consultation scheduling</li>
+                        <li style="margin-bottom: 0.5rem;">No fees unless we win</li>
                     </ul>
                 </div>
-                <p><strong>Need immediate assistance?</strong><br>
-                Call us directly: <a href="tel:+19095550123" style="color: #1e3c72;">(909) 555-0123</a></p>
+                <p style="text-align: center; color: #ffffff;"><strong>Need immediate assistance?</strong><br>
+                Call us directly: <a href="tel:+13106225880" style="color: #00c853; text-decoration: none; font-weight: bold;">(310) 622-5880</a></p>
             </div>
         `;
     }
