@@ -181,9 +181,9 @@ class MultiStepForm {
     collectStepData(stepNumber) {
         console.log('🔍 Collecting data for step:', stepNumber);
         
-        // Try multiple ways to find the step element
-        let currentStepElement = document.querySelector(`[data-step="${stepNumber}"]`);
-        console.log('📍 Method 1 - Found step element:', currentStepElement);
+        // CRITICAL: Use specific selector for form steps, not indicators
+        let currentStepElement = document.querySelector(`.form-step[data-step="${stepNumber}"]`);
+        console.log('📍 Method 1 - Found form step element:', currentStepElement);
         
         if (!currentStepElement) {
             // Fallback: find the active step
