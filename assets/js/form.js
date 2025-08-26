@@ -180,13 +180,37 @@ class MultiStepForm {
     
     collectStepData(stepNumber) {
         console.log('🔍 Collecting data for step:', stepNumber);
-        const currentStepElement = document.querySelector(`[data-step="${stepNumber}"]`);
-        console.log('📍 Found step element:', currentStepElement);
+        
+        // Try multiple ways to find the step element
+        let currentStepElement = document.querySelector(`[data-step="${stepNumber}"]`);
+        console.log('📍 Method 1 - Found step element:', currentStepElement);
+        
+        if (!currentStepElement) {
+            // Fallback: find the active step
+            currentStepElement = document.querySelector('.form-step.active');
+            console.log('📍 Method 2 - Found active step:', currentStepElement);
+        }
+        
+        if (!currentStepElement) {
+            // Last resort: find all form inputs
+            console.log('📍 Method 3 - Searching entire form');
+            currentStepElement = this.form;
+        }
         
         const inputs = currentStepElement.querySelectorAll('input, select, textarea');
         console.log('📋 Found inputs:', inputs.length);
         
+        // Log all inputs found
+        inputs.forEach((input, index) => {
+            console.log(`📝 Input ${index}: name="${input.name}" id="${input.id}" value="${input.value}" type="${input.type}"`);
+        });
+        
         inputs.forEach(input => {
+            if (!input.name) {
+                console.log('⚠️ Skipping input without name attribute:', input);
+                return;
+            }
+            
             console.log(`🔸 Processing input: ${input.name} = "${input.value}" (type: ${input.type})`);
             
             if (input.type === 'checkbox') {
@@ -199,13 +223,15 @@ class MultiStepForm {
             } else if (input.type === 'radio') {
                 if (input.checked) {
                     this.formData[input.name] = input.value;
+                    console.log(`✅ Radio selected: ${input.name} = ${input.value}`);
                 }
             } else {
                 this.formData[input.name] = input.value;
+                console.log(`✅ Field collected: ${input.name} = ${input.value}`);
             }
         });
         
-        console.log('📦 Collected form data:', this.formData);
+        console.log('📦 Final collected form data:', this.formData);
     }
     
     sendStepWebhook(stepNumber) {
