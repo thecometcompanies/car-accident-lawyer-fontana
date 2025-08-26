@@ -179,10 +179,16 @@ class MultiStepForm {
     }
     
     collectStepData(stepNumber) {
+        console.log('🔍 Collecting data for step:', stepNumber);
         const currentStepElement = document.querySelector(`[data-step="${stepNumber}"]`);
+        console.log('📍 Found step element:', currentStepElement);
+        
         const inputs = currentStepElement.querySelectorAll('input, select, textarea');
+        console.log('📋 Found inputs:', inputs.length);
         
         inputs.forEach(input => {
+            console.log(`🔸 Processing input: ${input.name} = "${input.value}" (type: ${input.type})`);
+            
             if (input.type === 'checkbox') {
                 if (!this.formData[input.name]) {
                     this.formData[input.name] = [];
@@ -198,6 +204,8 @@ class MultiStepForm {
                 this.formData[input.name] = input.value;
             }
         });
+        
+        console.log('📦 Collected form data:', this.formData);
     }
     
     sendStepWebhook(stepNumber) {
