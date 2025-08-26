@@ -1,0 +1,25 @@
+{
+  "name": "Fontana Car Accident Lawyer - Expert Personal Injury Attorney",
+  "short_name": "Fontana Lawyer",
+  "description": "Top-rated Fontana car accident lawyers. Free consultation, no fees unless we win. Call now for immediate legal help.",
+  "icons": [
+    {
+      "src": "/assets/images/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/android-chrome-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#00c853",
+  "background_color": "#0d0d0d",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["legal", "business", "professional"]
+}

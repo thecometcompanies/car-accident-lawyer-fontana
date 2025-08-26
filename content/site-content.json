@@ -186,6 +186,40 @@
       }
     ]
   },
+  "attorneys": {
+    "title": "Meet Your Fontana Car Accident Legal Team",
+    "subtitle": "Experienced attorneys with proven track records in personal injury law",
+    "profiles": [
+      {
+        "name": "Michael Rodriguez",
+        "title": "Senior Partner & Lead Trial Attorney",
+        "credentials": [
+          "California State Bar #123456",
+          "Certified Personal Injury Specialist", 
+          "Super Lawyers 2020-2024",
+          "AVVO 10.0 Rating"
+        ],
+        "experience": "25+ years fighting for accident victims",
+        "education": "USC Gould School of Law, J.D.",
+        "specialties": ["Motor Vehicle Accidents", "Wrongful Death", "Catastrophic Injuries"],
+        "bio": "Michael has recovered over $50 million for clients and has never lost a jury trial. He personally handles all major cases and ensures maximum compensation for every client."
+      },
+      {
+        "name": "Sarah Chen",
+        "title": "Senior Associate & Settlement Specialist", 
+        "credentials": [
+          "California State Bar #789012",
+          "Board Certified Trial Advocate",
+          "Million Dollar Advocates Forum",
+          "Top 40 Under 40 Attorney"
+        ],
+        "experience": "15+ years in personal injury law",
+        "education": "UCLA School of Law, J.D.",
+        "specialties": ["Insurance Negotiations", "Medical Malpractice", "Premises Liability"],
+        "bio": "Sarah's strategic approach to insurance negotiations has resulted in settlements averaging 3.5x higher than initial offers. She ensures clients receive full compensation for medical expenses and pain and suffering."
+      }
+    ]
+  },
   "contact": {
     "phone": "(XXX) XXX-XXXX",
     "email": "legal@fontanalawyers.com",
