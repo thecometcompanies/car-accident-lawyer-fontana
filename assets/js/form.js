@@ -219,17 +219,13 @@ class MultiStepForm {
             }
         };
 
-        // Simplified payload for n8n (common format)
+        // Very simple payload for n8n testing
         const externalPayload = {
-            email: this.formData.email,
-            phone: this.formData.phone,
-            preferredContact: this.formData.preferredContact,
-            step: stepNumber,
-            timestamp: new Date().toISOString(),
-            source: "accidentlawyerfontana.com",
-            sessionId: this.generateSessionId(),
-            userAgent: navigator.userAgent,
-            referrer: document.referrer
+            email: this.formData.email || "test@example.com",
+            phone: this.formData.phone || "555-123-4567",
+            preferredContact: this.formData.preferredContact || "email",
+            message: "New lead from Step 1 form",
+            source: "accidentlawyerfontana.com"
         };
         
         console.log('Internal payload:', internalPayload);
@@ -271,7 +267,9 @@ class MultiStepForm {
                 const response = await fetch(externalWebhookUrl, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'User-Agent': 'AccidentLawyerFontana/1.0'
                     },
                     body: JSON.stringify(externalPayload)
                 });
