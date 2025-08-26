@@ -200,7 +200,7 @@ class MultiStepForm {
         });
     }
     
-    async sendStepWebhook(stepNumber) {
+    sendStepWebhook(stepNumber) {
         const webhookUrl = this.form.getAttribute(`data-step-webhook-${stepNumber}`);
         const externalWebhookUrl = this.form.getAttribute(`data-external-webhook-${stepNumber}`);
         
@@ -213,27 +213,26 @@ class MultiStepForm {
             step: stepNumber,
             timestamp: new Date().toISOString(),
             leadData: {
-                email: this.formData.email,
-                phone: this.formData.phone,
-                preferredContact: this.formData.preferredContact
+                firstName: this.formData.firstName || "",
+                email: this.formData.email || "",
+                phone: this.formData.phone || "",
+                preferredContact: this.formData.preferredContact || "email"
             },
             metadata: {
                 sessionId: this.generateSessionId(),
-                ipAddress: await this.getClientIP(),
+                ipAddress: "client", // Will be detected by server
                 userAgent: navigator.userAgent,
                 referrer: document.referrer,
                 url: window.location.href
             }
         };
 
-        // Simple payload for n8n with name included
+        // Simple payload for n8n - even more simplified
         const externalPayload = {
-            firstName: this.formData.firstName || "Test",
-            email: this.formData.email || "test@example.com",
-            phone: this.formData.phone || "555-123-4567",
-            preferredContact: this.formData.preferredContact || "email",
-            message: "New lead from Step 1 form",
-            source: "accidentlawyerfontana.com"
+            firstName: this.formData.firstName || "",
+            email: this.formData.email || "",
+            phone: this.formData.phone || "",
+            preferredContact: this.formData.preferredContact || "email"
         };
         
         console.log('Internal payload:', internalPayload);
@@ -241,59 +240,50 @@ class MultiStepForm {
         
         // Call internal webhook with full payload
         if (webhookUrl) {
-            try {
-                console.log(`Calling internal webhook:`, webhookUrl);
-                
-                const response = await fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(internalPayload)
-                });
-                
+            console.log(`Calling internal webhook:`, webhookUrl);
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(internalPayload)
+            })
+            .then(response => {
                 console.log(`Internal webhook response:`, response.status, response.statusText);
-                
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.warn(`Internal webhook failed:`, response.status, errorText);
-                } else {
-                    const responseText = await response.text();
-                    console.log(`Internal webhook success:`, responseText);
-                }
-            } catch (error) {
+                return response.text();
+            })
+            .then(responseText => {
+                console.log(`Internal webhook success:`, responseText);
+            })
+            .catch(error => {
                 console.error(`Internal webhook error:`, error);
-            }
+            });
         }
         
         // Call external n8n webhook with simplified payload
         if (externalWebhookUrl) {
-            try {
-                console.log(`Calling n8n webhook:`, externalWebhookUrl);
-                console.log(`n8n payload:`, externalPayload);
-                
-                const response = await fetch(externalWebhookUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json',
-                        'User-Agent': 'AccidentLawyerFontana/1.0'
-                    },
-                    body: JSON.stringify(externalPayload)
-                });
-                
+            console.log(`Calling n8n webhook:`, externalWebhookUrl);
+            console.log(`n8n payload:`, externalPayload);
+            
+            fetch(externalWebhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'User-Agent': 'AccidentLawyerFontana/1.0'
+                },
+                body: JSON.stringify(externalPayload)
+            })
+            .then(response => {
                 console.log(`n8n webhook response:`, response.status, response.statusText);
-                
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    console.warn(`n8n webhook failed:`, response.status, errorText);
-                } else {
-                    const responseText = await response.text();
-                    console.log(`n8n webhook success:`, responseText);
-                }
-            } catch (error) {
+                return response.text();
+            })
+            .then(responseText => {
+                console.log(`n8n webhook success:`, responseText);
+            })
+            .catch(error => {
                 console.error(`n8n webhook error:`, error);
-            }
+            });
         }
     }
     
