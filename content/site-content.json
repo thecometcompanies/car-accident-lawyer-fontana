@@ -203,5 +203,34 @@
       "Results may vary depending on your particular facts and legal circumstances.",
       "Attorney advertising. Prior results do not guarantee a similar outcome."
     ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What should I do immediately after a car accident in Fontana?",
+        "answer": "1. Ensure safety and call 911 if anyone is injured. 2. Move to a safe location if possible. 3. Call police to file a report. 4. Exchange insurance information with all parties. 5. Document the scene with photos and witness information. 6. Seek medical attention even if injuries seem minor. 7. Contact a Fontana car accident lawyer before speaking with insurance companies."
+      },
+      {
+        "question": "How long do I have to file a car accident claim in California?",
+        "answer": "In California, you have 2 years from the date of the accident to file a personal injury lawsuit (statute of limitations). However, you should contact an attorney immediately as evidence can be lost and witnesses' memories fade. Insurance claims should be filed as soon as possible, typically within 30 days of the accident."
+      },
+      {
+        "question": "What compensation can I receive for my car accident injuries?",
+        "answer": "You may be entitled to economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). In severe cases involving gross negligence, punitive damages may apply. Our Fontana attorneys have recovered settlements ranging from $50,000 to $2.4 million depending on case specifics."
+      },
+      {
+        "question": "Do I need a lawyer if the insurance company offers a settlement?",
+        "answer": "Yes, absolutely. Insurance companies typically offer 30-50% less than the true case value in initial settlements. Our clients receive an average of 3.5x more compensation with legal representation. Insurance adjusters are trained to minimize payouts, while we know how to properly value your claim including future medical costs and pain and suffering."
+      },
+      {
+        "question": "How much does it cost to hire a car accident lawyer in Fontana?",
+        "answer": "We work on a contingency fee basis, meaning you pay nothing upfront. We only get paid when we win your case. Our legal fees come from the settlement or verdict, not from your pocket. We also advance all case costs including expert witnesses, medical records, and investigation expenses at no cost to you."
+      },
+      {
+        "question": "What if the other driver doesn't have insurance in California?",
+        "answer": "You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. Our experienced attorneys know how to identify all possible sources of compensation."
+      }
+    ]
   }
 }

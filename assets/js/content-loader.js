@@ -34,6 +34,7 @@ class ContentManager {
         this.renderHero();
         this.renderForm();
         this.renderTrustSignals();
+        this.renderFAQ();
     }
     
     updateMeta() {
@@ -162,6 +163,43 @@ class ContentManager {
                 if (description) description.textContent = data.description;
             }
         });
+    }
+    
+    renderFAQ() {
+        const { faq } = this.content;
+        if (!faq) return;
+        
+        // Update FAQ title
+        const faqTitle = document.querySelector('.faq-section h2');
+        if (faqTitle) {
+            faqTitle.textContent = faq.title;
+        }
+        
+        // Render FAQ items dynamically if needed
+        const faqContainer = document.querySelector('.faq-section > div');
+        if (faqContainer && faq.items) {
+            // Clear existing FAQ items
+            faqContainer.innerHTML = '';
+            
+            // Generate FAQ items from JSON data
+            faq.items.forEach((item, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.style.cssText = 'margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;';
+                
+                faqItem.innerHTML = `
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        ${item.question}
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>${item.answer}</p>
+                    </div>
+                `;
+                
+                faqContainer.appendChild(faqItem);
+            });
+        }
     }
     
     // Method to update content dynamically
