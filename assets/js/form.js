@@ -189,7 +189,7 @@ class MultiStepForm {
     
     async sendStepWebhook(stepNumber) {
         const webhookUrl = this.form.getAttribute(`data-step-webhook-${stepNumber}`);
-        if (!webhookUrl) return;
+        const externalWebhookUrl = this.form.getAttribute(`data-external-webhook-${stepNumber}`);
         
         const payload = {
             step: stepNumber,
@@ -208,20 +208,29 @@ class MultiStepForm {
             }
         };
         
-        try {
-            const response = await fetch(webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
-            
-            if (!response.ok) {
-                console.warn('Step 1 webhook failed:', response.status);
+        // Call both internal webhook (if exists) and external automation webhook
+        const webhooks = [];
+        if (webhookUrl) webhooks.push({ url: webhookUrl, name: 'internal' });
+        if (externalWebhookUrl) webhooks.push({ url: externalWebhookUrl, name: 'external' });
+        
+        for (const webhook of webhooks) {
+            try {
+                const response = await fetch(webhook.url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    console.warn(`${webhook.name} webhook failed:`, response.status);
+                } else {
+                    console.log(`${webhook.name} webhook success`);
+                }
+            } catch (error) {
+                console.warn(`${webhook.name} webhook error:`, error);
             }
-        } catch (error) {
-            console.warn('Step 1 webhook error:', error);
         }
     }
     
