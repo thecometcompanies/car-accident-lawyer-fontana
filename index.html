@@ -353,6 +353,119 @@
         .loading.active {
             display: inline-block;
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+            margin: 2rem;
+            padding: 0;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 2px solid #333;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: slideInUp 0.4s ease;
+        }
+
+        .modal-header {
+            background: linear-gradient(45deg, #00c853, #4caf50);
+            padding: 2rem;
+            border-radius: 18px 18px 0 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            color: #000;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            color: #000;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* CTA Button Styles */
+        .cta-modal-btn {
+            background: linear-gradient(45deg, #00c853, #4caf50) !important;
+            color: #000 !important;
+            border: none !important;
+            padding: 1rem 2rem !important;
+            font-size: 1.1rem !important;
+            font-weight: 700 !important;
+            border-radius: 8px !important;
+            cursor: pointer !important;
+            transition: all 0.3s ease !important;
+            text-transform: uppercase !important;
+            box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3) !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+        }
+
+        .cta-modal-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4) !important;
+        }
     </style>
     
     <!-- Comprehensive Schema Markup for SEO -->
@@ -871,7 +984,8 @@
                         <span style="font-size: 2.5rem; font-weight: bold; color: #000;">⚡</span>
                     </div>
                     <h3 style="color: #fff; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">1-Hour Response Guarantee</h3>
-                    <p style="color: #ccc; line-height: 1.6; font-size: 1.1rem;">Submit your case details and get connected to a qualified Fontana car accident lawyer within 60 minutes - guaranteed.</p>
+                    <p style="color: #ccc; line-height: 1.6; font-size: 1.1rem; margin-bottom: 1.5rem;">Submit your case details and get connected to a qualified Fontana car accident lawyer within 60 minutes - guaranteed.</p>
+                    <button onclick="openModal()" class="cta-modal-btn">Get Started Now</button>
                 </div>
                 
                 <!-- Verified Network -->
@@ -1022,6 +1136,43 @@
                 });
             });
         }
+
+        // Modal functionality
+        function openModal() {
+            const modal = document.getElementById('formModal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize new form instance for modal
+            if (window.modalForm) {
+                window.modalForm = null;
+            }
+            // Small delay to ensure modal is rendered
+            setTimeout(() => {
+                window.modalForm = new MultiStepForm('modal-intake-form');
+            }, 100);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('formModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('formModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Escape key to close modal
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 
     <!-- Premium Local Fontana Section -->
@@ -1144,6 +1295,219 @@
 
         </div>
     </section>
+
+    <!-- Modal Form Popup -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+                <h2>Free Case Evaluation</h2>
+                <p style="color: #000; margin: 0.5rem 0 0; font-weight: 600;">Get connected with a qualified attorney in 1 hour</p>
+            </div>
+            <div class="modal-body">
+                <form id="modal-intake-form" class="contact-form multi-step" 
+                      data-step-webhook-1="/api/intake-step1"
+                      data-step-webhook-2="/api/intake-complete"
+                      data-external-webhook-1="https://hook.us2.make.com/your-step1-webhook"
+                      data-external-webhook-2="https://hook.us2.make.com/your-step2-webhook">
+                    
+                    <!-- Step Indicator -->
+                    <div class="step-indicator" role="progressbar" aria-valuemin="1" aria-valuemax="2">
+                        <div class="step-indicator__item active" data-step="1">Contact Info</div>
+                        <div class="step-indicator__item" data-step="2">Case Details</div>
+                    </div>
+
+                    <!-- Step 1: Contact Information -->
+                    <div class="form-step active" data-step="1">
+                        <h3>Contact Information</h3>
+                        <p>Start your free consultation - we'll contact you within 1 hour.</p>
+                        
+                        <div class="form-group">
+                            <label for="modal-email">Email Address *</label>
+                            <input type="email" id="modal-email" name="email" required>
+                            <div id="modal-email-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modal-phone">Phone Number *</label>
+                            <input type="tel" id="modal-phone" name="phone" required>
+                            <div id="modal-phone-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Contact Method *</label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="preferredContact" value="email" required>
+                                    <span>Email</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="preferredContact" value="phone" required>
+                                    <span>Phone Call</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="preferredContact" value="text" required>
+                                    <span>Text Message</span>
+                                </label>
+                            </div>
+                            <div id="modal-preferredContact-error" class="error"></div>
+                        </div>
+
+                        <!-- Consent Notice -->
+                        <div style="background: rgba(0, 200, 83, 0.1); border: 1px solid rgba(0, 200, 83, 0.3); border-radius: 8px; padding: 1rem; margin: 1.5rem 0; font-size: 0.9rem; color: #ccc;">
+                            <strong style="color: #00c853;">📞 Consent to Contact:</strong> By providing your phone number, you consent to receive calls and text messages from our attorney network partners regarding your case. Standard rates may apply.
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn--primary btn-next">Continue to Case Details →</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Case Details -->
+                    <div class="form-step" data-step="2">
+                        <h3>Tell Us About Your Case</h3>
+                        <p>Help us understand your situation for the best legal advice.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="modal-firstName">First Name *</label>
+                                <input type="text" id="modal-firstName" name="firstName" required>
+                                <div id="modal-firstName-error" class="error"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="modal-lastName">Last Name *</label>
+                                <input type="text" id="modal-lastName" name="lastName" required>
+                                <div id="modal-lastName-error" class="error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modal-incidentDate">Date of Incident *</label>
+                            <input type="date" id="modal-incidentDate" name="incidentDate" required>
+                            <div id="modal-incidentDate-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modal-accidentType">Type of Accident *</label>
+                            <select id="modal-accidentType" name="accidentType" required>
+                                <option value="">Select accident type...</option>
+                                <option value="motor-vehicle">Motor Vehicle Accident</option>
+                                <option value="motorcycle">Motorcycle Accident</option>
+                                <option value="pedestrian">Pedestrian Accident</option>
+                                <option value="bicycle">Bicycle Accident</option>
+                                <option value="slip-fall">Slip and Fall</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div id="modal-accidentType-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modal-injuryDescription">Describe Your Injuries *</label>
+                            <textarea id="modal-injuryDescription" name="injuryDescription" required 
+                                    placeholder="Please describe your injuries and how they occurred..."></textarea>
+                            <div id="modal-injuryDescription-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Medical Treatment Received (check all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalTreatment" value="emergency-room">
+                                    <span>Emergency Room</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalTreatment" value="hospitalization">
+                                    <span>Hospitalization</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalTreatment" value="physical-therapy">
+                                    <span>Physical Therapy</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalTreatment" value="ongoing">
+                                    <span>Ongoing Treatment</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="medicalTreatment" value="none">
+                                    <span>No Treatment Yet</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="modal-hasInsurance">Insurance Information *</label>
+                                <select id="modal-hasInsurance" name="hasInsurance" required>
+                                    <option value="">Select...</option>
+                                    <option value="yes">Yes, I have insurance</option>
+                                    <option value="no">No insurance</option>
+                                    <option value="unsure">Unsure</option>
+                                </select>
+                                <div id="modal-hasInsurance-error" class="error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Police Report Filed *</label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="policeReport" value="yes" required>
+                                    <span>Yes</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="policeReport" value="no" required>
+                                    <span>No</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="policeReport" value="unknown" required>
+                                    <span>Unknown</span>
+                                </label>
+                            </div>
+                            <div id="modal-policeReport-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Fault Assignment *</label>
+                            <div class="radio-group">
+                                <label class="radio-item">
+                                    <input type="radio" name="faultAssignment" value="other" required>
+                                    <span>Other party at fault</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="faultAssignment" value="mutual" required>
+                                    <span>Mutual fault</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="faultAssignment" value="unsure" required>
+                                    <span>Unsure</span>
+                                </label>
+                                <label class="radio-item">
+                                    <input type="radio" name="faultAssignment" value="me" required>
+                                    <span>I may be at fault</span>
+                                </label>
+                            </div>
+                            <div id="modal-faultAssignment-error" class="error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="modal-additionalDetails">Additional Details (Optional)</label>
+                            <textarea id="modal-additionalDetails" name="additionalDetails" 
+                                    placeholder="Any additional information about your case..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn--secondary btn-prev">← Back</button>
+                            <button type="submit" class="btn btn--primary">
+                                Submit Case Information
+                                <span class="loading">...</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

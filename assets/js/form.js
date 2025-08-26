@@ -1,12 +1,15 @@
 class MultiStepForm {
-    constructor() {
-        this.form = document.getElementById('intake-form');
-        this.steps = document.querySelectorAll('.form-step');
-        this.stepIndicators = document.querySelectorAll('.step-indicator__item');
+    constructor(formId = 'intake-form') {
+        this.form = document.getElementById(formId);
+        this.formId = formId;
+        this.steps = this.form ? this.form.querySelectorAll('.form-step') : [];
+        this.stepIndicators = this.form ? this.form.querySelectorAll('.step-indicator__item') : [];
         this.currentStep = 1;
         this.formData = {};
         
-        this.init();
+        if (this.form) {
+            this.init();
+        }
     }
     
     init() {
@@ -15,21 +18,21 @@ class MultiStepForm {
     }
     
     bindEvents() {
-        // Next button
-        const nextBtn = document.querySelector('.btn-next');
+        // Next button - look within this form only
+        const nextBtn = this.form.querySelector('.btn-next');
         if (nextBtn) {
-            console.log('Next button found and event listener attached');
+            console.log(`Next button found for form ${this.formId}`);
             nextBtn.addEventListener('click', (e) => {
                 console.log('Next button clicked!');
                 e.preventDefault();
                 this.nextStep();
             });
         } else {
-            console.error('Next button NOT found!');
+            console.error(`Next button NOT found for form ${this.formId}`);
         }
         
-        // Previous button
-        const prevBtn = document.querySelector('.btn-prev');
+        // Previous button - look within this form only
+        const prevBtn = this.form.querySelector('.btn-prev');
         if (prevBtn) {
             prevBtn.addEventListener('click', () => this.prevStep());
         }
@@ -43,8 +46,10 @@ class MultiStepForm {
     }
     
     setupPhoneFormatter() {
-        const phoneInput = document.getElementById('phone');
-        phoneInput.addEventListener('input', (e) => {
+        // Look for phone input within this specific form
+        const phoneInput = this.form.querySelector('input[name="phone"]');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '');
             if (value.length >= 6) {
                 value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
@@ -52,7 +57,8 @@ class MultiStepForm {
                 value = value.replace(/(\d{3})(\d{1,3})/, '($1) $2');
             }
             e.target.value = value;
-        });
+            });
+        }
     }
     
     nextStep() {
