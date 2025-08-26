@@ -242,28 +242,76 @@
     "title": "Frequently Asked Questions",
     "items": [
       {
+        "question": "How does your attorney matching service work?",
+        "answer": "Our process is simple: 1) Submit your case details through our secure form 2) We review your information within 30 minutes 3) We match you with 1-3 pre-screened Fontana car accident attorneys based on your specific needs 4) Attorneys contact you directly within 1 hour 5) You choose the lawyer that feels right for your case. Our service is 100% free to you."
+      },
+      {
         "question": "What should I do immediately after a car accident in Fontana?",
-        "answer": "1. Ensure safety and call 911 if anyone is injured. 2. Move to a safe location if possible. 3. Call police to file a report. 4. Exchange insurance information with all parties. 5. Document the scene with photos and witness information. 6. Seek medical attention even if injuries seem minor. 7. Contact a Fontana car accident lawyer before speaking with insurance companies."
+        "answer": "1. Ensure safety and call 911 if anyone is injured. 2. Move to a safe location if possible. 3. Call police to file a report. 4. Exchange insurance information with all parties. 5. Document the scene with photos and witness information. 6. Seek medical attention even if injuries seem minor. 7. Contact our matching service to get connected with a qualified Fontana car accident lawyer before speaking with insurance companies."
+      },
+      {
+        "question": "How quickly will I be connected with a lawyer?",
+        "answer": "We guarantee attorney contact within 1 hour of submitting your case details. Our network of pre-screened attorneys are available 24/7 and understand the urgency of accident cases. Time is critical after an accident - evidence disappears, witnesses forget details, and insurance companies start building their defense immediately."
+      },
+      {
+        "question": "Are the attorneys in your network experienced with Fontana cases?",
+        "answer": "Absolutely. All attorneys in our network are licensed California attorneys with specific experience in San Bernardino County courts. They know the local judges, court procedures, traffic patterns, and common accident locations in Fontana. Many have offices in or near Fontana and have handled hundreds of cases in the area."
+      },
+      {
+        "question": "How much does your matching service cost?",
+        "answer": "Our attorney matching service is completely free to accident victims. We are paid by the attorneys in our network, not by you. The attorneys we connect you with typically work on contingency fees, meaning you pay no attorney fees unless they win your case. There are never any upfront costs or hidden fees for our service."
+      },
+      {
+        "question": "What types of car accident cases do you handle?",
+        "answer": "We match attorneys for all types of vehicle accidents including: motor vehicle collisions, motorcycle accidents, truck accidents, pedestrian accidents, bicycle accidents, rideshare accidents (Uber/Lyft), hit-and-run cases, uninsured motorist claims, and wrongful death cases. Our attorneys handle everything from minor fender-benders to catastrophic injuries."
       },
       {
         "question": "How long do I have to file a car accident claim in California?",
-        "answer": "In California, you have 2 years from the date of the accident to file a personal injury lawsuit (statute of limitations). However, you should contact an attorney immediately as evidence can be lost and witnesses' memories fade. Insurance claims should be filed as soon as possible, typically within 30 days of the accident."
-      },
-      {
-        "question": "What compensation can I receive for my car accident injuries?",
-        "answer": "You may be entitled to economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). In severe cases involving gross negligence, punitive damages may apply. Our Fontana attorneys have recovered settlements ranging from $50,000 to $2.4 million depending on case specifics."
-      },
-      {
-        "question": "Do I need a lawyer if the insurance company offers a settlement?",
-        "answer": "Yes, absolutely. Insurance companies typically offer 30-50% less than the true case value in initial settlements. Our clients receive an average of 3.5x more compensation with legal representation. Insurance adjusters are trained to minimize payouts, while we know how to properly value your claim including future medical costs and pain and suffering."
-      },
-      {
-        "question": "How much does it cost to hire a car accident lawyer in Fontana?",
-        "answer": "We work on a contingency fee basis, meaning you pay nothing upfront. We only get paid when we win your case. Our legal fees come from the settlement or verdict, not from your pocket. We also advance all case costs including expert witnesses, medical records, and investigation expenses at no cost to you."
+        "answer": "In California, you have 2 years from the date of the accident to file a personal injury lawsuit (statute of limitations). However, you should get connected with an attorney immediately as evidence can be lost and witnesses' memories fade. Insurance claims should be filed as soon as possible, typically within 30 days of the accident."
       },
       {
         "question": "What if the other driver doesn't have insurance in California?",
-        "answer": "You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. Our experienced attorneys know how to identify all possible sources of compensation."
+        "answer": "You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. The attorneys we connect you with know how to identify all possible sources of compensation."
+      },
+      {
+        "question": "What compensation can I receive for my car accident injuries?",
+        "answer": "You may be entitled to economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). In severe cases involving gross negligence, punitive damages may apply. Attorneys in our network have recovered settlements ranging from $50,000 to $2.4 million depending on case specifics."
+      },
+      {
+        "question": "Will I be pressured to hire a specific attorney?",
+        "answer": "Never. Our goal is to connect you with qualified attorneys, not pressure you into hiring someone. We typically provide 1-3 attorney matches based on your case specifics. You speak with each attorney, ask questions, and choose who feels right for your situation. You're under no obligation to hire any attorney we refer."
+      },
+      {
+        "question": "What information do I need to provide for attorney matching?",
+        "answer": "We need basic information about your accident: date and location, type of vehicles involved, brief description of injuries, insurance information, and whether police were called. The more details you provide, the better we can match you with the right attorney. All information is kept confidential and secure."
+      },
+      {
+        "question": "Do you work with attorneys outside of Fontana?",
+        "answer": "Yes, our network includes attorneys throughout San Bernardino County including Rancho Cucamonga, Ontario, San Bernardino, Rialto, Colton, and surrounding areas. However, we prioritize attorneys familiar with Fontana courts and local accident patterns when possible."
+      },
+      {
+        "question": "What if I'm not happy with the attorney you matched me with?",
+        "answer": "If the initial match isn't the right fit, contact us immediately. We can provide additional attorney options from our network. Remember, you're never locked into working with any attorney. You have the right to change representation at any time during your case."
+      },
+      {
+        "question": "How do you screen attorneys for your network?",
+        "answer": "We verify all attorneys are licensed in good standing with the California State Bar, have specific personal injury experience, maintain malpractice insurance, and have positive client reviews. We also check their track record with settlements and verdicts, their reputation in the legal community, and their commitment to client communication."
+      },
+      {
+        "question": "What if my case is too small for an attorney to take?",
+        "answer": "We work with attorneys who handle cases of all sizes. Even minor accidents can result in significant medical bills and lost wages. Many attorneys will evaluate any case where there are injuries and damages. During our matching process, we'll be honest about your case's potential and connect you with attorneys appropriate for your situation."
+      },
+      {
+        "question": "Can you help if my accident happened outside of Fontana?",
+        "answer": "Yes, we can help with accidents throughout Southern California. While we specialize in Fontana and San Bernardino County, our network includes attorneys licensed throughout California who can handle cases in Los Angeles, Riverside, Orange County, and other areas."
+      },
+      {
+        "question": "What happens if I need immediate medical attention?",
+        "answer": "Your health comes first. Seek immediate medical care for any injuries. Many attorneys in our network can help arrange medical treatment through providers who accept liens (no upfront payment required). They can also guide you on protecting your legal rights while focusing on your recovery."
+      },
+      {
+        "question": "Is my personal information secure when I submit my case details?",
+        "answer": "Absolutely. We use bank-level encryption to protect all personal information submitted through our platform. Your case details are only shared with pre-screened attorneys in our network who have signed confidentiality agreements. We never sell or share your information with third parties for marketing purposes."
       }
     ]
   }
