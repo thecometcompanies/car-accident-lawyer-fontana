@@ -49,16 +49,22 @@ class MultiStepForm {
     }
     
     nextStep() {
+        console.log('NextStep triggered, current step:', this.currentStep);
+        
         if (this.validateStep(this.currentStep)) {
             this.collectStepData(this.currentStep);
+            console.log('Step data collected:', this.formData);
             
             if (this.currentStep === 1) {
+                console.log('Sending Step 1 webhook...');
                 this.sendStepWebhook(1);
             }
             
             this.currentStep++;
             this.showStep(this.currentStep);
             this.updateStepIndicator();
+        } else {
+            console.log('Validation failed for step:', this.currentStep);
         }
     }
     
@@ -191,6 +197,10 @@ class MultiStepForm {
         const webhookUrl = this.form.getAttribute(`data-step-webhook-${stepNumber}`);
         const externalWebhookUrl = this.form.getAttribute(`data-external-webhook-${stepNumber}`);
         
+        console.log('Webhook URLs found:');
+        console.log('Internal:', webhookUrl);
+        console.log('External:', externalWebhookUrl);
+        
         const payload = {
             step: stepNumber,
             timestamp: new Date().toISOString(),
@@ -208,13 +218,19 @@ class MultiStepForm {
             }
         };
         
+        console.log('Webhook payload:', payload);
+        
         // Call both internal webhook (if exists) and external automation webhook
         const webhooks = [];
         if (webhookUrl) webhooks.push({ url: webhookUrl, name: 'internal' });
         if (externalWebhookUrl) webhooks.push({ url: externalWebhookUrl, name: 'external' });
         
+        console.log('Sending to webhooks:', webhooks);
+        
         for (const webhook of webhooks) {
             try {
+                console.log(`Calling ${webhook.name} webhook:`, webhook.url);
+                
                 const response = await fetch(webhook.url, {
                     method: 'POST',
                     headers: {
@@ -223,13 +239,17 @@ class MultiStepForm {
                     body: JSON.stringify(payload)
                 });
                 
+                console.log(`${webhook.name} webhook response:`, response.status, response.statusText);
+                
                 if (!response.ok) {
-                    console.warn(`${webhook.name} webhook failed:`, response.status);
+                    const errorText = await response.text();
+                    console.warn(`${webhook.name} webhook failed:`, response.status, errorText);
                 } else {
-                    console.log(`${webhook.name} webhook success`);
+                    const responseText = await response.text();
+                    console.log(`${webhook.name} webhook success:`, responseText);
                 }
             } catch (error) {
-                console.warn(`${webhook.name} webhook error:`, error);
+                console.error(`${webhook.name} webhook error:`, error);
             }
         }
     }
