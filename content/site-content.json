@@ -13,8 +13,8 @@
       "action": "scroll-to-form"
     },
     "secondaryCTA": {
-      "text": "Call (909) 555-0123",
-      "action": "tel:+19095550123"
+      "text": "Call (XXX) XXX-XXXX",
+      "action": "tel:+1XXXXXXXXXX"
     }
   },
   "form": {
