@@ -13,8 +13,8 @@
       "action": "scroll-to-form"
     },
     "secondaryCTA": {
-      "text": "Call (XXX) XXX-XXXX",
-      "action": "tel:+1XXXXXXXXXX"
+      "text": "Get Help Now",
+      "action": "modal"
     }
   },
   "form": {
