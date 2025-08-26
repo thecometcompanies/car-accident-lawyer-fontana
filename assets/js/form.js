@@ -201,7 +201,8 @@ class MultiStepForm {
         console.log('Internal:', webhookUrl);
         console.log('External:', externalWebhookUrl);
         
-        const payload = {
+        // Create different payloads for internal vs external webhooks
+        const internalPayload = {
             step: stepNumber,
             timestamp: new Date().toISOString(),
             leadData: {
@@ -217,39 +218,75 @@ class MultiStepForm {
                 url: window.location.href
             }
         };
+
+        // Simplified payload for n8n (common format)
+        const externalPayload = {
+            email: this.formData.email,
+            phone: this.formData.phone,
+            preferredContact: this.formData.preferredContact,
+            step: stepNumber,
+            timestamp: new Date().toISOString(),
+            source: "accidentlawyerfontana.com",
+            sessionId: this.generateSessionId(),
+            userAgent: navigator.userAgent,
+            referrer: document.referrer
+        };
         
-        console.log('Webhook payload:', payload);
+        console.log('Internal payload:', internalPayload);
+        console.log('External payload:', externalPayload);
         
-        // Call both internal webhook (if exists) and external automation webhook
-        const webhooks = [];
-        if (webhookUrl) webhooks.push({ url: webhookUrl, name: 'internal' });
-        if (externalWebhookUrl) webhooks.push({ url: externalWebhookUrl, name: 'external' });
-        
-        console.log('Sending to webhooks:', webhooks);
-        
-        for (const webhook of webhooks) {
+        // Call internal webhook with full payload
+        if (webhookUrl) {
             try {
-                console.log(`Calling ${webhook.name} webhook:`, webhook.url);
+                console.log(`Calling internal webhook:`, webhookUrl);
                 
-                const response = await fetch(webhook.url, {
+                const response = await fetch(webhookUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(internalPayload)
                 });
                 
-                console.log(`${webhook.name} webhook response:`, response.status, response.statusText);
+                console.log(`Internal webhook response:`, response.status, response.statusText);
                 
                 if (!response.ok) {
                     const errorText = await response.text();
-                    console.warn(`${webhook.name} webhook failed:`, response.status, errorText);
+                    console.warn(`Internal webhook failed:`, response.status, errorText);
                 } else {
                     const responseText = await response.text();
-                    console.log(`${webhook.name} webhook success:`, responseText);
+                    console.log(`Internal webhook success:`, responseText);
                 }
             } catch (error) {
-                console.error(`${webhook.name} webhook error:`, error);
+                console.error(`Internal webhook error:`, error);
+            }
+        }
+        
+        // Call external n8n webhook with simplified payload
+        if (externalWebhookUrl) {
+            try {
+                console.log(`Calling n8n webhook:`, externalWebhookUrl);
+                console.log(`n8n payload:`, externalPayload);
+                
+                const response = await fetch(externalWebhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(externalPayload)
+                });
+                
+                console.log(`n8n webhook response:`, response.status, response.statusText);
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.warn(`n8n webhook failed:`, response.status, errorText);
+                } else {
+                    const responseText = await response.text();
+                    console.log(`n8n webhook success:`, responseText);
+                }
+            } catch (error) {
+                console.error(`n8n webhook error:`, error);
             }
         }
     }
