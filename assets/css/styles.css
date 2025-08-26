@@ -304,6 +304,31 @@
     .trust-item {
         padding: 1.5rem;
     }
+    
+    /* FAQ Mobile Optimization */
+    .faq-section h2 {
+        font-size: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .faq-item {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .faq-question {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+    
+    .faq-answer {
+        padding: 0 1rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    #showMoreButton button {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 1rem !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -326,6 +351,31 @@
     
     .step-indicator::before {
         display: none;
+    }
+    
+    /* Extra small screens FAQ optimization */
+    .faq-section {
+        padding: 3rem 0 !important;
+    }
+    
+    .faq-section h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .faq-question {
+        padding: 0.8rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .faq-toggle {
+        font-size: 1.25rem !important;
+    }
+    
+    #showMoreButton button {
+        padding: 0.7rem 1.2rem !important;
+        font-size: 0.95rem !important;
+        margin: 2rem 0 !important;
     }
     
     .cta-buttons {

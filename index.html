@@ -39,6 +39,26 @@
     <meta name="geo.position" content="34.0922;-117.4350">
     <meta name="ICBM" content="34.0922, -117.4350">
     
+    <!-- Performance Optimization Meta Tags -->
+    <meta http-equiv="X-DNS-Prefetch-Control" content="on">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//vercel.app">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    
+    <!-- Additional SEO & Local Business Meta -->
+    <meta name="geo.country" content="US">
+    <meta name="geo.locality" content="Fontana">
+    <meta name="geo.region" content="CA">
+    <meta name="rating" content="5.0">
+    <meta name="price-range" content="Free Consultation">
+    <meta name="business-hours" content="Mo-Su 00:00-24:00">
+    <meta name="telephone" content="(XXX) XXX-XXXX">
+    <meta name="coverage-area" content="Fontana, San Bernardino County, California">
+    
+    <!-- FAQ Rich Snippets Support -->
+    <meta name="faq-count" content="43">
+    <meta name="legal-topics" content="car accidents, personal injury, insurance claims, legal representation">
+    
     <!-- Favicon and Touch Icons -->
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
@@ -620,6 +640,38 @@
                     "@type": "Answer",
                     "text": "You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. Our experienced attorneys know how to identify all possible sources of compensation."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "How does your attorney matching service work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our process is simple: 1) Submit your case details through our secure form 2) We review your information within 30 minutes 3) We match you with 1-3 pre-screened Fontana car accident attorneys based on your specific needs 4) Attorneys contact you directly within 1 hour 5) You choose the lawyer that feels right for your case. Our service is 100% free to you."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How quickly will I be connected with a lawyer?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We guarantee attorney contact within 1 hour of submitting your case details. Our network of pre-screened attorneys are available 24/7 and understand the urgency of accident cases. Time is critical after an accident - evidence disappears, witnesses forget details, and insurance companies start building their defense immediately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What types of car accident cases do you handle?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We match attorneys for all types of vehicle accidents including: motor vehicle collisions, motorcycle accidents, truck accidents, pedestrian accidents, bicycle accidents, rideshare accidents (Uber/Lyft), hit-and-run cases, uninsured motorist claims, and wrongful death cases. Our attorneys handle everything from minor fender-benders to catastrophic injuries."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I still pursue a claim if I was partially at fault?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, California follows comparative negligence laws, meaning you can still recover damages even if you were partially at fault. Your compensation will be reduced by your percentage of fault. For example, if you're found 25% at fault, you can still recover 75% of your damages."
+                }
             }
         ]
     }
@@ -735,6 +787,44 @@
         }
     }
     </script>
+    
+    <!-- Legal Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LegalService",
+        "name": "Fontana Car Accident Attorney Matching Service",
+        "description": "Professional attorney matching service connecting car accident victims with experienced personal injury lawyers in Fontana and San Bernardino County.",
+        "url": "https://car-accident-lawyer-fontana.vercel.app",
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Fontana",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+            },
+            {
+                "@type": "AdministrativeArea",
+                "name": "San Bernardino County",
+                "addressRegion": "CA",
+                "addressCountry": "US"
+            }
+        ],
+        "serviceType": [
+            "Car Accident Legal Representation",
+            "Personal Injury Claims",
+            "Insurance Claim Assistance",
+            "Attorney Matching Services"
+        ],
+        "priceRange": "Free Consultation",
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "name": "24/7 Legal Consultation",
+            "availableLanguage": "English",
+            "servicePhone": "(XXX) XXX-XXXX"
+        }
+    }
+    </script>
 </head>
 <body>
     <section class="hero">
@@ -742,7 +832,7 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Injured in an Accident? Get the Compensation You Deserve</h1>
-                    <h2>Get the Compensation You Deserve with a Accident Attorney right here in Fontana, CA.</h2>
+                    <h2>We will match you with the best Accident Attorney to get the Compensation You Deserve</h2>
                     <p>Free consultation with experienced Fontana car accident lawyers. No fees unless we win your case.</p>
                     <div class="cta-buttons">
                         <button onclick="openModal()" class="btn btn--primary">Start Free Case Evaluation</button>
@@ -1016,72 +1106,13 @@
     <section class="law-firm-showcase" style="background: #1a1a1a; padding: 6rem 1rem;">
         <div class="container">
             
-            <!-- FAQ Section -->
-            <div class="faq-section" style="margin-bottom: 4rem;">
-                <h2 style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; text-align: center; text-transform: uppercase;">Frequently Asked Questions</h2>
-                <div style="max-width: 800px; margin: 0 auto;">
-                    
-                    <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
-                        <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                            What should I do immediately after a car accident in Fontana?
-                            <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
-                        </button>
-                        <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
-                            <p>1. Ensure safety and call 911 if anyone is injured. 2. Move to a safe location if possible. 3. Call police to file a report. 4. Exchange insurance information with all parties. 5. Document the scene with photos and witness information. 6. Seek medical attention even if injuries seem minor. 7. Contact a Fontana car accident lawyer before speaking with insurance companies.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
-                        <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                            How long do I have to file a car accident claim in California?
-                            <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
-                        </button>
-                        <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
-                            <p>In California, you have 2 years from the date of the accident to file a personal injury lawsuit (statute of limitations). However, you should contact an attorney immediately as evidence can be lost and witnesses' memories fade. Insurance claims should be filed as soon as possible, typically within 30 days of the accident.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
-                        <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                            What compensation can I receive for my car accident injuries?
-                            <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
-                        </button>
-                        <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
-                            <p>You may be entitled to economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). In severe cases involving gross negligence, punitive damages may apply. Our Fontana attorneys have recovered settlements ranging from $50,000 to $2.4 million depending on case specifics.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
-                        <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                            Do I need a lawyer if the insurance company offers a settlement?
-                            <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
-                        </button>
-                        <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
-                            <p>Yes, absolutely. Insurance companies typically offer 30-50% less than the true case value in initial settlements. Our clients receive an average of 3.5x more compensation with legal representation. Insurance adjusters are trained to minimize payouts, while we know how to properly value your claim including future medical costs and pain and suffering.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
-                        <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                            How much does it cost to hire a car accident lawyer in Fontana?
-                            <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
-                        </button>
-                        <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
-                            <p>We work on a contingency fee basis, meaning you pay nothing upfront. We only get paid when we win your case. Our legal fees come from the settlement or verdict, not from your pocket. We also advance all case costs including expert witnesses, medical records, and investigation expenses at no cost to you.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
-                        <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                            What if the other driver doesn't have insurance in California?
-                            <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
-                        </button>
-                        <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
-                            <p>You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. Our experienced attorneys know how to identify all possible sources of compensation.</p>
-                        </div>
-                    </div>
-
-                </div>
+            <!-- FAQ Link Section -->
+            <div class="faq-link-section" style="margin-bottom: 4rem; text-align: center;">
+                <h2 style="color: #fff; font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; text-transform: uppercase;">Have Questions?</h2>
+                <p style="color: #ccc; font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Get answers to the most common questions about car accidents, legal procedures, and compensation in Fontana.</p>
+                <a href="#faq" class="btn btn-primary" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #00c853, #00e676); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 200, 83, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 200, 83, 0.3)'">
+                    View All FAQs →
+                </a>
             </div>
         </div>
     </section>
@@ -1116,6 +1147,45 @@
                 answer.style.display = 'none';
                 toggle.textContent = '+';
                 button.style.background = '#2a2a2a';
+            }
+        }
+
+        // Progressive FAQ Loading
+        let currentGroup = 0;
+        const totalFAQs = 43;
+        const groupSizes = [10, 14, 4]; // Group 1: 10 FAQs, Group 2: 14 FAQs, Group 3: 4 FAQs
+        
+        function showMoreFAQs() {
+            currentGroup++;
+            const groupId = 'faqGroup' + currentGroup;
+            const group = document.getElementById(groupId);
+            const button = document.getElementById('showMoreButton');
+            const remainingCount = document.getElementById('remainingCount');
+            
+            if (group) {
+                // Show the current group with smooth animation
+                group.style.display = 'block';
+                group.style.opacity = '0';
+                group.style.transform = 'translateY(20px)';
+                group.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    group.style.opacity = '1';
+                    group.style.transform = 'translateY(0)';
+                }, 10);
+                
+                // Calculate remaining FAQs
+                let remaining = 0;
+                for (let i = currentGroup; i < groupSizes.length; i++) {
+                    remaining += groupSizes[i];
+                }
+                
+                if (remaining > 0) {
+                    remainingCount.textContent = remaining;
+                } else {
+                    // Hide the button when all FAQs are shown
+                    button.style.display = 'none';
+                }
             }
         }
         
@@ -1695,6 +1765,461 @@
             </div>
         </div>
     </div>
+
+    <!-- Complete FAQ Section -->
+    <section id="faq" class="faq-section" style="background: #1a1a1a; padding: 4rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <h2 style="color: #fff; font-size: 3rem; font-weight: 800; margin-bottom: 3rem; text-align: center; text-transform: uppercase;">Frequently Asked Questions</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How does your attorney matching service work?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Our process is simple: 1) Submit your case details through our secure form 2) We review your information within 30 minutes 3) We match you with 1-3 pre-screened Fontana car accident attorneys based on your specific needs 4) Attorneys contact you directly within 1 hour 5) You choose the lawyer that feels right for your case. Our service is 100% free to you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What should I do immediately after a car accident in Fontana?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>1. Ensure safety and call 911 if anyone is injured. 2. Move to a safe location if possible. 3. Call police to file a report. 4. Exchange insurance information with all parties. 5. Document the scene with photos and witness information. 6. Seek medical attention even if injuries seem minor. 7. Contact our matching service to get connected with a qualified Fontana car accident lawyer before speaking with insurance companies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How quickly will I be connected with a lawyer?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>We guarantee attorney contact within 1 hour of submitting your case details. Our network of pre-screened attorneys are available 24/7 and understand the urgency of accident cases. Time is critical after an accident - evidence disappears, witnesses forget details, and insurance companies start building their defense immediately.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Are the attorneys in your network experienced with Fontana cases?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Absolutely. All attorneys in our network are licensed California attorneys with specific experience in San Bernardino County courts. They know the local judges, court procedures, traffic patterns, and common accident locations in Fontana. Many have offices in or near Fontana and have handled hundreds of cases in the area.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How much does your matching service cost?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Our attorney matching service is completely free to accident victims. We are paid by the attorneys in our network, not by you. The attorneys we connect you with typically work on contingency fees, meaning you pay no attorney fees unless they win your case. There are never any upfront costs or hidden fees for our service.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What types of car accident cases do you handle?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>We match attorneys for all types of vehicle accidents including: motor vehicle collisions, motorcycle accidents, truck accidents, pedestrian accidents, bicycle accidents, rideshare accidents (Uber/Lyft), hit-and-run cases, uninsured motorist claims, and wrongful death cases. Our attorneys handle everything from minor fender-benders to catastrophic injuries.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How long do I have to file a car accident claim in California?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>In California, you have 2 years from the date of the accident to file a personal injury lawsuit (statute of limitations). However, you should get connected with an attorney immediately as evidence can be lost and witnesses' memories fade. Insurance claims should be filed as soon as possible, typically within 30 days of the accident.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if the other driver doesn't have insurance in California?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. The attorneys we connect you with know how to identify all possible sources of compensation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What compensation can I receive for my car accident injuries?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>You may be entitled to economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). In severe cases involving gross negligence, punitive damages may apply. Attorneys in our network have recovered settlements ranging from $50,000 to $2.4 million depending on case specifics.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Will I be pressured to hire a specific attorney?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Never. Our goal is to connect you with qualified attorneys, not pressure you into hiring someone. We typically provide 1-3 attorney matches based on your case specifics. You speak with each attorney, ask questions, and choose who feels right for your situation. You're under no obligation to hire any attorney we refer.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What information do I need to provide for attorney matching?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>We need basic information about your accident: date and location, type of vehicles involved, brief description of injuries, insurance information, and whether police were called. The more details you provide, the better we can match you with the right attorney. All information is kept confidential and secure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Do you work with attorneys outside of Fontana?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Yes, our network includes attorneys throughout San Bernardino County including Rancho Cucamonga, Ontario, San Bernardino, Rialto, Colton, and surrounding areas. However, we prioritize attorneys familiar with Fontana courts and local accident patterns when possible.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if I'm not happy with the attorney you matched me with?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>If the initial match isn't the right fit, contact us immediately. We can provide additional attorney options from our network. Remember, you're never locked into working with any attorney. You have the right to change representation at any time during your case.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How do you screen attorneys for your network?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>We verify all attorneys are licensed in good standing with the California State Bar, have specific personal injury experience, maintain malpractice insurance, and have positive client reviews. We also check their track record with settlements and verdicts, their reputation in the legal community, and their commitment to client communication.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if my case is too small for an attorney to take?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>We work with attorneys who handle cases of all sizes. Even minor accidents can result in significant medical bills and lost wages. Many attorneys will evaluate any case where there are injuries and damages. During our matching process, we'll be honest about your case's potential and connect you with attorneys appropriate for your situation.</p>
+                    </div>
+                </div>
+
+                <!-- Show More FAQ Button -->
+                <div id="showMoreButton" style="text-align: center; margin: 3rem 0;">
+                    <button onclick="showMoreFAQs()" style="padding: 1rem 2rem; background: linear-gradient(135deg, #00c853, #00e676); color: #fff; border: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0, 200, 83, 0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0, 200, 83, 0.3)'">
+                        Show More FAQs (<span id="remainingCount">28</span> remaining)
+                    </button>
+                </div>
+
+                <!-- FAQ Group 1: Questions 16-25 (Hidden by default) -->
+                <div id="faqGroup1" style="display: none;">
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can you help if my accident happened outside of Fontana?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Yes, we can help with accidents throughout Southern California. While we specialize in Fontana and San Bernardino County, our network includes attorneys licensed throughout California who can handle cases in Los Angeles, Riverside, Orange County, and other areas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What happens if I need immediate medical attention?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Your health comes first. Seek immediate medical care for any injuries. Many attorneys in our network can help arrange medical treatment through providers who accept liens (no upfront payment required). They can also guide you on protecting your legal rights while focusing on your recovery.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Is my personal information secure when I submit my case details?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Absolutely. We use bank-level encryption to protect all personal information submitted through our platform. Your case details are only shared with pre-screened attorneys in our network who have signed confidentiality agreements. We never sell or share your information with third parties for marketing purposes.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What makes your attorney network different from other referral services?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Unlike generic referral services, we specialize exclusively in personal injury and car accident cases in San Bernardino County. Every attorney in our network has been personally vetted for their track record, client satisfaction, and local court experience. We also provide ongoing case monitoring and client support throughout the legal process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How do I know if I have a strong case?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Several factors indicate a strong personal injury case: clear fault by another party, documented injuries requiring medical treatment, police reports, witness testimony, and compliance with statute of limitations. The attorneys we connect you with will provide a free case evaluation to assess your claim's strength and potential value.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What should I avoid doing after a car accident?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Don't admit fault or apologize at the scene, don't sign any documents from insurance companies without attorney review, don't give recorded statements to opposing insurance companies, don't post about your accident on social media, don't delay seeking medical attention, and don't wait too long to contact an attorney.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can I still pursue a claim if I was partially at fault?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Yes, California follows comparative negligence laws, meaning you can still recover damages even if you were partially at fault. Your compensation will be reduced by your percentage of fault. For example, if you're found 25% at fault, you can still recover 75% of your damages.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How is the value of my personal injury claim calculated?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Claim value includes economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment of life). Factors include injury severity, treatment duration, impact on daily activities, lost earning capacity, and degree of fault. Experienced attorneys use proven formulas and case precedents to maximize your settlement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What happens if the insurance company denies my claim?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>If an insurance company denies your claim, the attorneys in our network can file an appeal, provide additional evidence, negotiate directly with adjusters, or file a lawsuit if necessary. Many initially denied claims are successfully overturned with proper legal representation and documentation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How long does it typically take to resolve a car accident case?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Simple cases with clear fault and minor injuries may resolve in 3-6 months. Complex cases involving serious injuries, disputed fault, or multiple parties can take 12-24 months or longer. Your attorney will provide realistic timelines based on your specific circumstances and work to expedite your case when possible.</p>
+                    </div>
+                </div>
+                </div>
+
+                <!-- FAQ Group 2: Questions 26-35 (Hidden by default) -->
+                <div id="faqGroup2" style="display: none;">
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Will I have to go to court for my car accident case?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Most personal injury cases (about 95%) settle out of court through negotiations. However, if the insurance company won't offer fair compensation, filing a lawsuit and potentially going to trial may be necessary. Your attorney will prepare your case thoroughly and advise you on the best strategy for maximum recovery.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if the at-fault driver's insurance coverage isn't enough?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>If the at-fault driver has insufficient insurance, you may recover additional compensation through your own underinsured motorist coverage, the driver's personal assets, or by identifying other liable parties (employers, property owners, vehicle manufacturers). Experienced attorneys know how to find all available sources of compensation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can I change attorneys if I'm not satisfied with my representation?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Yes, you have the right to change attorneys at any time. If you're unsatisfied with an attorney we referred, contact us immediately. We can provide alternative options from our network. Your new attorney will typically handle the transition and may need to pay your previous attorney for work already completed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What expenses will I be responsible for during my case?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Most personal injury attorneys work on contingency fees, meaning you pay no attorney fees unless they win. However, you may be responsible for case expenses like medical records, expert witnesses, and court filing fees. Many attorneys advance these costs and deduct them from your settlement, so you pay nothing upfront.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How do medical liens work in personal injury cases?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Medical providers may place liens on your settlement to ensure payment for treatment. Your attorney will negotiate these liens to reduce the amounts owed, ensuring you keep more of your settlement. Many attorneys have relationships with providers who accept liens, allowing you to receive treatment without upfront payment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if I'm injured as a passenger in a car accident?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>As an injured passenger, you're typically not at fault and can pursue claims against all negligent drivers involved. You may also have coverage under your own insurance policy. Passenger injury cases often result in higher settlements since fault is usually clear.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can I pursue a claim for emotional trauma after a car accident?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Yes, emotional distress and psychological trauma are compensable damages in California. Conditions like PTSD, anxiety, depression, and phobias following an accident can significantly impact your life. Documentation from mental health professionals strengthens these claims.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if the accident happened in a construction zone?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Construction zone accidents may involve multiple liable parties including contractors, the city, or state agencies. These cases require specialized knowledge of government liability and construction site safety regulations. The attorneys we work with have experience with these complex multi-party cases.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How do ride-share accident cases differ from regular car accidents?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Uber and Lyft accidents involve complex insurance coverage that depends on the driver's status (offline, waiting for rides, en route to pickup, or carrying passengers). These companies carry substantial insurance policies, but accessing coverage requires understanding their specific terms and conditions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What should I do if I'm contacted by the other driver's insurance company?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Politely decline to give recorded statements and refer them to your attorney. Insurance adjusters are trained to minimize payouts and may use your statements against you. It's best to have legal representation handle all communications with opposing insurance companies.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can I pursue a claim if the accident happened while I was working?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>If injured while working, you may have both a workers' compensation claim against your employer and a personal injury claim against the at-fault driver. California allows you to pursue both simultaneously, potentially maximizing your total compensation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if the other driver fled the scene (hit-and-run)?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Hit-and-run cases can still result in compensation through your uninsured motorist coverage. Your attorney will work with police investigators to locate the at-fault driver and can help you access all available insurance coverage, including your own policy benefits.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How do traffic camera and dashcam footage affect my case?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Video evidence is extremely valuable in establishing fault and the severity of impact. Your attorney will work quickly to preserve footage from traffic cameras, nearby businesses, and dashcams before it's automatically deleted. This evidence often leads to faster, higher settlements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if I have pre-existing injuries that were worsened by the accident?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>You can still pursue compensation for the aggravation of pre-existing conditions. California's 'eggshell skull' rule means at-fault parties are responsible for all consequences of their actions, even if you were more susceptible to injury than the average person.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Group 3: Questions 36-43 (Hidden by default) -->
+                <div id="faqGroup3" style="display: none;">
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        Can family members pursue claims for their losses after my accident?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Family members may pursue 'loss of consortium' claims for the impact your injuries have on your relationship, including loss of companionship, support, and services. Spouses and children can sometimes recover compensation for their own emotional and financial losses.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What happens to my case if the at-fault driver dies in the accident?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>If the at-fault driver dies, claims can still be pursued against their estate and insurance coverage. The process involves additional legal procedures, but experienced attorneys know how to navigate wrongful death and estate proceedings to ensure you receive fair compensation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        How do weather conditions affect fault determination in accidents?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>While bad weather doesn't automatically excuse negligent driving, it can affect fault percentages. Drivers have a duty to adjust their driving for conditions. Your attorney will investigate whether the other driver was driving too fast for conditions or failed to maintain proper control of their vehicle.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" style="margin-bottom: 2rem; background: #2a2a2a; border-radius: 8px; overflow: hidden;">
+                    <button class="faq-question" onclick="toggleFAQ(this)" style="width: 100%; padding: 1.5rem; background: #2a2a2a; color: #fff; border: none; text-align: left; font-size: 1.2rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                        What if my car accident involved a commercial truck or delivery vehicle?
+                        <span class="faq-toggle" style="font-size: 1.5rem; font-weight: bold; color: #00c853;">+</span>
+                    </button>
+                    <div class="faq-answer" style="display: none; padding: 0 1.5rem 1.5rem; color: #ccc; line-height: 1.6;">
+                        <p>Commercial vehicle accidents involve federal regulations, higher insurance limits, and potential employer liability. These cases often result in larger settlements but require attorneys experienced with trucking regulations, logbook violations, and commercial insurance policies.</p>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>

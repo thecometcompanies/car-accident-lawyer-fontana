@@ -82,13 +82,90 @@ Both endpoints include:
 - **Mobile-first responsive design**
 - **Accessibility compliant** (WCAG 2.1 AA)
 
-## 🎨 Customization
+## 🎨 CSS & Design System
 
-Edit these files to customize:
+### **Vanilla CSS/HTML Approach**
+This project uses **vanilla CSS and HTML** for maximum performance and control:
+- **No CSS frameworks** (no Bootstrap, Tailwind, MUI)
+- **Critical CSS inlined** for fastest first paint
+- **Custom responsive grid** built for performance
+- **Mobile-first design** with progressive enhancement
+
+### **Reusable Component Library**
+We maintain a library of tested, performance-optimized components:
+
+#### **Form Components**
+```html
+<!-- Multi-step form with progress indicator -->
+<div class="step-indicator">
+  <div class="step-indicator__item active">Step 1</div>
+  <div class="step-indicator__item">Step 2</div>
+</div>
+
+<!-- Form validation styling -->
+.form-field.error { border-color: #f44336; }
+.form-field.valid { border-color: #4caf50; }
+```
+
+#### **Button Library**
+```css
+/* Primary CTA Button */
+.btn--primary {
+  background: linear-gradient(135deg, #00c853, #00e676);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Secondary Button */
+.btn--secondary {
+  background: transparent;
+  border: 2px solid #00c853;
+  color: #00c853;
+}
+
+/* Mobile-optimized touch targets */
+@media (max-width: 768px) {
+  .btn { min-height: 48px; padding: 0.8rem 1.5rem; }
+}
+```
+
+#### **Layout Components**
+```css
+/* Container with performance-optimized breakpoints */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Responsive grid without CSS Grid overhead */
+.trust-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* FAQ accordion with smooth animations */
+.faq-item { background: #2a2a2a; border-radius: 8px; overflow: hidden; }
+.faq-question { width: 100%; padding: 1.5rem; cursor: pointer; }
+```
+
+### **Component Usage Guidelines**
+1. **Copy-paste ready**: All components tested for A+ PageSpeed scores
+2. **Mobile-first**: Responsive breakpoints optimized for legal traffic
+3. **Accessibility**: WCAG 2.1 AA compliant out of the box
+4. **Performance**: Critical CSS inlined, non-critical loaded async
+
+### **Customization Files**
 - `index.html` - Content and structure
-- `assets/css/styles.css` - Styling
-- `assets/js/form.js` - Form behavior
+- `assets/css/styles.css` - Component styles and customizations
+- `assets/js/form.js` - Interactive behavior
 - `api/webhooks/` - Integration logic
+
+### **Why Vanilla CSS?**
+- **Performance**: 90+ PageSpeed scores requirement
+- **Load Speed**: <1.5 second initial load target
+- **Control**: No framework constraints for legal compliance
+- **Maintainability**: Simple, readable code for any developer
 
 ## 📈 Built for Results
 
