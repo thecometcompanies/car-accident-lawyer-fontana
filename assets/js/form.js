@@ -18,7 +18,14 @@ class MultiStepForm {
         // Next button
         const nextBtn = document.querySelector('.btn-next');
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => this.nextStep());
+            console.log('Next button found and event listener attached');
+            nextBtn.addEventListener('click', (e) => {
+                console.log('Next button clicked!');
+                e.preventDefault();
+                this.nextStep();
+            });
+        } else {
+            console.error('Next button NOT found!');
         }
         
         // Previous button
@@ -219,8 +226,9 @@ class MultiStepForm {
             }
         };
 
-        // Very simple payload for n8n testing
+        // Simple payload for n8n with name included
         const externalPayload = {
+            firstName: this.formData.firstName || "Test",
             email: this.formData.email || "test@example.com",
             phone: this.formData.phone || "555-123-4567",
             preferredContact: this.formData.preferredContact || "email",
