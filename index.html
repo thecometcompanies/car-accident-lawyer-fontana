@@ -272,6 +272,7 @@
             padding: 0.5rem;
             border-radius: 8px;
             transition: background 0.2s ease;
+            width: 100%;
         }
         
         .radio-item:hover,
@@ -387,18 +388,18 @@
                             <div class="form-group">
                                 <label>Preferred Contact Method *</label>
                                 <div class="radio-group">
-                                    <div class="radio-item">
+                                    <label class="radio-item" for="contact-email">
                                         <input type="radio" id="contact-email" name="preferredContact" value="email" required>
-                                        <label for="contact-email">Email</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>Email</span>
+                                    </label>
+                                    <label class="radio-item" for="contact-phone">
                                         <input type="radio" id="contact-phone" name="preferredContact" value="phone">
-                                        <label for="contact-phone">Phone Call</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>Phone Call</span>
+                                    </label>
+                                    <label class="radio-item" for="contact-text">
                                         <input type="radio" id="contact-text" name="preferredContact" value="text">
-                                        <label for="contact-text">Text Message</label>
-                                    </div>
+                                        <span>Text Message</span>
+                                    </label>
                                 </div>
                                 <div class="error" id="contact-error"></div>
                             </div>
@@ -459,26 +460,26 @@
                             <div class="form-group">
                                 <label>Medical Treatment Received (check all that apply)</label>
                                 <div class="checkbox-group">
-                                    <div class="checkbox-item">
+                                    <label class="checkbox-item" for="treatment-er">
                                         <input type="checkbox" id="treatment-er" name="medicalTreatment" value="emergency-room">
-                                        <label for="treatment-er">Emergency Room</label>
-                                    </div>
-                                    <div class="checkbox-item">
+                                        <span>Emergency Room</span>
+                                    </label>
+                                    <label class="checkbox-item" for="treatment-hospital">
                                         <input type="checkbox" id="treatment-hospital" name="medicalTreatment" value="hospitalization">
-                                        <label for="treatment-hospital">Hospitalization</label>
-                                    </div>
-                                    <div class="checkbox-item">
+                                        <span>Hospitalization</span>
+                                    </label>
+                                    <label class="checkbox-item" for="treatment-pt">
                                         <input type="checkbox" id="treatment-pt" name="medicalTreatment" value="physical-therapy">
-                                        <label for="treatment-pt">Physical Therapy</label>
-                                    </div>
-                                    <div class="checkbox-item">
+                                        <span>Physical Therapy</span>
+                                    </label>
+                                    <label class="checkbox-item" for="treatment-ongoing">
                                         <input type="checkbox" id="treatment-ongoing" name="medicalTreatment" value="ongoing">
-                                        <label for="treatment-ongoing">Ongoing Treatment</label>
-                                    </div>
-                                    <div class="checkbox-item">
+                                        <span>Ongoing Treatment</span>
+                                    </label>
+                                    <label class="checkbox-item" for="treatment-none">
                                         <input type="checkbox" id="treatment-none" name="medicalTreatment" value="none">
-                                        <label for="treatment-none">No Treatment Yet</label>
-                                    </div>
+                                        <span>No Treatment Yet</span>
+                                    </label>
                                 </div>
                             </div>
 
@@ -496,18 +497,18 @@
                             <div class="form-group">
                                 <label>Police Report Filed *</label>
                                 <div class="radio-group">
-                                    <div class="radio-item">
+                                    <label class="radio-item" for="police-yes">
                                         <input type="radio" id="police-yes" name="policeReport" value="yes" required>
-                                        <label for="police-yes">Yes</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>Yes</span>
+                                    </label>
+                                    <label class="radio-item" for="police-no">
                                         <input type="radio" id="police-no" name="policeReport" value="no">
-                                        <label for="police-no">No</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>No</span>
+                                    </label>
+                                    <label class="radio-item" for="police-unknown">
                                         <input type="radio" id="police-unknown" name="policeReport" value="unknown">
-                                        <label for="police-unknown">Unknown</label>
-                                    </div>
+                                        <span>Unknown</span>
+                                    </label>
                                 </div>
                                 <div class="error" id="policeReport-error"></div>
                             </div>
@@ -515,22 +516,22 @@
                             <div class="form-group">
                                 <label>Fault Assignment *</label>
                                 <div class="radio-group">
-                                    <div class="radio-item">
+                                    <label class="radio-item" for="fault-other">
                                         <input type="radio" id="fault-other" name="faultAssignment" value="other" required>
-                                        <label for="fault-other">Other party at fault</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>Other party at fault</span>
+                                    </label>
+                                    <label class="radio-item" for="fault-mutual">
                                         <input type="radio" id="fault-mutual" name="faultAssignment" value="mutual">
-                                        <label for="fault-mutual">Mutual fault</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>Mutual fault</span>
+                                    </label>
+                                    <label class="radio-item" for="fault-unsure">
                                         <input type="radio" id="fault-unsure" name="faultAssignment" value="unsure">
-                                        <label for="fault-unsure">Unsure</label>
-                                    </div>
-                                    <div class="radio-item">
+                                        <span>Unsure</span>
+                                    </label>
+                                    <label class="radio-item" for="fault-me">
                                         <input type="radio" id="fault-me" name="faultAssignment" value="me">
-                                        <label for="fault-me">I may be at fault</label>
-                                    </div>
+                                        <span>I may be at fault</span>
+                                    </label>
                                 </div>
                                 <div class="error" id="faultAssignment-error"></div>
                             </div>
