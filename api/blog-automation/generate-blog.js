@@ -11,7 +11,7 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 class BlogPostGenerator {
   constructor() {
-    this.model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    this.model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
     this.blogDir = path.join(process.cwd(), 'blog');
     this.dbFile = path.join(process.cwd(), 'blog/blog-database.json');
     
