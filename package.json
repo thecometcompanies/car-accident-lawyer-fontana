@@ -1,12 +1,18 @@
 {
   "name": "fontana-car-accident-lawyer",
   "version": "1.0.0",
-  "description": "One-page attorney website with multi-step personal injury intake form",
+  "description": "One-page attorney website with automated blog system and multi-step intake form",
   "main": "index.html",
+  "type": "module",
   "scripts": {
     "dev": "npx serve public",
-    "build": "mkdir -p public && cp index.html public/ && cp -r assets public/ && cp -r content public/",
-    "start": "npx serve public"
+    "build": "mkdir -p public && cp index.html public/ && cp -r assets public/ && cp -r content public/ && cp -r blog public/",
+    "start": "npx serve public",
+    "generate-blog": "node api/blog-automation/generate-blog.js",
+    "blog-status": "node -e \"import('./api/blog-automation/generate-blog.js').then(m => m.default.prototype.getDatabaseStats.call({dbFile: './blog/blog-database.json'})).then(console.log)\""
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
   },
   "keywords": [
     "attorney",
