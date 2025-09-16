@@ -7,7 +7,7 @@ import { BlogStorage } from '../../lib/redis.js';
 export default async function handler(req, res) {
   try {
     const storage = new BlogStorage();
-    const posts = await storage.getBlogPosts(20); // Get latest 20 posts
+    const posts = await storage.getAllBlogPosts(20); // Get latest 20 posts
     
     // Return blog listing
     res.status(200).json({
