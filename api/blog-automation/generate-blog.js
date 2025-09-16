@@ -6,6 +6,7 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import fs from 'fs/promises';
 import path from 'path';
+import { BlogStorage } from '../../lib/redis.js';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -14,6 +15,7 @@ class BlogPostGenerator {
     this.model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
     this.blogDir = path.join(process.cwd(), 'blog');
     this.dbFile = path.join(process.cwd(), 'blog/blog-database.json');
+    this.storage = new BlogStorage();
     
     // SEO-focused topics for car accident lawyers
     this.topics = [
@@ -92,11 +94,11 @@ class BlogPostGenerator {
       
       const blogPost = JSON.parse(jsonMatch[0]);
       
-      // Save blog post
-      await this.saveBlogPost(blogPost);
+      // Save blog post to Redis
+      await this.storage.saveBlogPost(blogPost);
       
-      // Update database
-      await this.updateDatabase(blogPost);
+      // Also save locally (backup)
+      await this.saveBlogPost(blogPost);
       
       console.log(`✅ Blog post generated: ${blogPost.title}`);
       return blogPost;
@@ -273,22 +275,30 @@ class BlogPostGenerator {
 
   async getDatabaseStats() {
     try {
-      const tempDbFile = '/tmp/blog-database.json';
-      const dbContent = await fs.readFile(tempDbFile, 'utf8');
-      const database = JSON.parse(dbContent);
+      // Get stats from Redis
+      const redisStats = await this.storage.getStats();
       
-      return {
-        totalPosts: database.length,
-        latestPost: database[0],
-        publishedThisMonth: database.filter(post => {
+      // Calculate published this month
+      let publishedThisMonth = 0;
+      if (redisStats.latestPost) {
+        const posts = await this.storage.getBlogPosts(50); // Get recent posts
+        publishedThisMonth = posts.filter(post => {
           const postDate = new Date(post.publishDate);
           const now = new Date();
           return postDate.getMonth() === now.getMonth() && 
                  postDate.getFullYear() === now.getFullYear();
-        }).length
+        }).length;
+      }
+      
+      return {
+        totalPosts: redisStats.totalPosts,
+        latestPost: redisStats.latestPost,
+        publishedThisMonth,
+        source: redisStats.source
       };
     } catch (error) {
-      return { totalPosts: 0, latestPost: null, publishedThisMonth: 0 };
+      console.error('Error getting database stats:', error);
+      return { totalPosts: 0, latestPost: null, publishedThisMonth: 0, source: 'error' };
     }
   }
 }

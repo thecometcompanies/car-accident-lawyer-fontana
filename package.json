@@ -12,7 +12,8 @@
     "blog-status": "node -e \"import('./api/blog-automation/generate-blog.js').then(m => m.default.prototype.getDatabaseStats.call({dbFile: './blog/blog-database.json'})).then(console.log)\""
   },
   "dependencies": {
-    "@google/generative-ai": "^0.21.0"
+    "@google/generative-ai": "^0.21.0",
+    "@upstash/redis": "^1.34.0"
   },
   "keywords": [
     "attorney",
