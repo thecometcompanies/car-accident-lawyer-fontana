@@ -108,13 +108,14 @@ class BlogPostGenerator {
   }
 
   async saveBlogPost(post) {
-    // Ensure blog directory exists
-    await fs.mkdir(this.blogDir, { recursive: true });
+    // In Vercel, we need to use /tmp for file writes
+    const tempBlogDir = '/tmp/blog';
+    await fs.mkdir(tempBlogDir, { recursive: true });
     
     // Create filename with date and slug
     const date = new Date().toISOString().split('T')[0];
     const filename = `${date}-${post.slug}.json`;
-    const filepath = path.join(this.blogDir, filename);
+    const filepath = path.join(tempBlogDir, filename);
     
     // Add metadata
     post.filename = filename;
@@ -126,7 +127,7 @@ class BlogPostGenerator {
     
     // Also create HTML version for direct serving
     const htmlContent = this.generateHTML(post);
-    const htmlFilepath = path.join(this.blogDir, `${date}-${post.slug}.html`);
+    const htmlFilepath = path.join(tempBlogDir, `${date}-${post.slug}.html`);
     await fs.writeFile(htmlFilepath, htmlContent);
     
     post.htmlFile = htmlFilepath;
@@ -231,9 +232,12 @@ class BlogPostGenerator {
     try {
       let database = [];
       
+      // Use /tmp for database in Vercel
+      const tempDbFile = '/tmp/blog-database.json';
+      
       // Load existing database
       try {
-        const dbContent = await fs.readFile(this.dbFile, 'utf8');
+        const dbContent = await fs.readFile(tempDbFile, 'utf8');
         database = JSON.parse(dbContent);
       } catch (error) {
         // Database doesn't exist yet, start fresh
@@ -258,7 +262,7 @@ class BlogPostGenerator {
       database = database.slice(0, 100);
       
       // Save updated database
-      await fs.writeFile(this.dbFile, JSON.stringify(database, null, 2));
+      await fs.writeFile(tempDbFile, JSON.stringify(database, null, 2));
       
       console.log(`📊 Database updated. Total posts: ${database.length}`);
       
@@ -269,7 +273,8 @@ class BlogPostGenerator {
 
   async getDatabaseStats() {
     try {
-      const dbContent = await fs.readFile(this.dbFile, 'utf8');
+      const tempDbFile = '/tmp/blog-database.json';
+      const dbContent = await fs.readFile(tempDbFile, 'utf8');
       const database = JSON.parse(dbContent);
       
       return {
