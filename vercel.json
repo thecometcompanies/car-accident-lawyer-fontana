@@ -4,6 +4,23 @@
   "framework": "nextjs",
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/webhooks/step1.js": {
+      "maxDuration": 10
+    },
+    "api/webhooks/step2.js": {
+      "maxDuration": 10
+    },
+    "api/cron/daily-blog.js": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/daily-blog",
+      "schedule": "0 17 * * *"
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/intake-step1",
