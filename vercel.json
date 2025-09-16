@@ -42,6 +42,10 @@
     {
       "source": "/blog",
       "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/(.*)",
+      "destination": "/api/blog/single-post?slug=$1"
     }
   ]
 }
