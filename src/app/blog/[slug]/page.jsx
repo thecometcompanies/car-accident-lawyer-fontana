@@ -30,9 +30,9 @@ const blogPosts = {
       <h3>5. Avoid Common Mistakes</h3>
       <p>Don't admit fault, don't accept the first settlement offer, and don't give recorded statements without legal counsel. These mistakes can cost you thousands in compensation.</p>
       
-      <div style="background: #f0f9ff; padding: 20px; border-left: 4px solid #007cba; margin: 20px 0;">
-        <h4>⚖️ Need Legal Help?</h4>
-        <p>Don't wait! Contact our experienced Fontana car accident attorneys for a free consultation. We work on a contingency basis - no fees unless we win your case.</p>
+      <div style="background: #1e3a8a; padding: 20px; border-left: 4px solid #3b82f6; margin: 20px 0; color: #ffffff;">
+        <h4 style="color: #ffffff; margin-top: 0;">⚖️ Need Legal Help?</h4>
+        <p style="color: #e0e7ff; margin-bottom: 0;">Don't wait! Contact our experienced Fontana car accident attorneys for a free consultation. We work on a contingency basis - no fees unless we win your case.</p>
       </div>
     `,
     keywords: ["fontana car accident lawyer", "car accident attorney fontana", "personal injury lawyer san bernardino county"],
@@ -74,9 +74,9 @@ const blogPosts = {
         <li><strong>Permanent Disability:</strong> 8% of cases</li>
       </ul>
       
-      <div style="background: #fef2f2; padding: 20px; border-left: 4px solid #dc2626; margin: 20px 0;">
-        <h4>⚠️ Insurance Company Tactics</h4>
-        <p>67% of victims accept lowball offers within 72 hours. Don't become a statistic - know your rights and get legal representation before speaking to insurance companies.</p>
+      <div style="background: #7f1d1d; padding: 20px; border-left: 4px solid #ef4444; margin: 20px 0; color: #ffffff;">
+        <h4 style="color: #ffffff; margin-top: 0;">⚠️ Insurance Company Tactics</h4>
+        <p style="color: #fecaca; margin-bottom: 0;">67% of victims accept lowball offers within 72 hours. Don't become a statistic - know your rights and get legal representation before speaking to insurance companies.</p>
       </div>
     `,
     keywords: ["fontana car accident statistics", "car accident data fontana", "fontana traffic accidents"],
