@@ -16,9 +16,6 @@
       "schedule": "0 17 * * *"
     }
   ],
-  "deploymentProtection": {
-    "enabled": false
-  },
   "headers": [
     {
       "source": "/assets/(.*)",
