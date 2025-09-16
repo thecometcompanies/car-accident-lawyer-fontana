@@ -10,6 +10,7 @@ const sections = [
   { id: 'testimonials', title: 'Testimonials' },
   { id: 'about', title: 'About Us' },
   { id: 'results', title: 'Case Results' },
+  { id: 'blog', title: 'Legal Blog', href: '/blog' },
   { id: 'contact', title: 'Contact' },
 ]
 
@@ -125,7 +126,7 @@ export function NavBar() {
                 <PopoverButton
                   as="a"
                   key={section.id}
-                  href={`#${section.id}`}
+                  href={section.href || `#${section.id}`}
                   className="flex items-center px-4 py-2 hover:bg-slate-50"
                 >
                   <span className="text-base font-medium text-slate-900">
@@ -155,10 +156,10 @@ export function NavBar() {
           {sections.map((section, sectionIndex) => (
             <a
               key={section.id}
-              href={`#${section.id}`}
+              href={section.href || `#${section.id}`}
               className={clsx(
                 'text-base font-medium transition-colors',
-                sectionIndex === activeIndex
+                (sectionIndex === activeIndex && !section.href)
                   ? 'text-red-600'
                   : 'text-slate-700 hover:text-red-600',
               )}

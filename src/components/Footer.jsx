@@ -19,7 +19,7 @@ export function Footer() {
           <div className="max-w-md mx-auto mb-8">
             <RequestCallForm compact={true} />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
               <h4 className="font-semibold text-slate-900 mb-2">Service Area</h4>
               <p>San Bernardino County</p>
@@ -27,6 +27,12 @@ export function Footer() {
             <div>
               <h4 className="font-semibold text-slate-900 mb-2">Available</h4>
               <p>24/7 Emergency Referrals</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-slate-900 mb-2">Legal Resources</h4>
+              <a href="/blog" className="text-red-600 hover:text-red-700 font-medium">
+                Read Our Legal Blog →
+              </a>
             </div>
           </div>
         </div>
