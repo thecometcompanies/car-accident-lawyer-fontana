@@ -35,6 +35,10 @@
     {
       "source": "/api/intake-step2", 
       "destination": "/api/webhooks/step2"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
     }
   ]
 }
