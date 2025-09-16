@@ -32,7 +32,7 @@ export default function BlogList() {
 
   if (loading) {
     return (
-      <div className="bg-white py-16 dark:bg-gray-900">
+      <div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-indigo-600 mx-auto"></div>
@@ -45,7 +45,7 @@ export default function BlogList() {
 
   if (error) {
     return (
-      <div className="bg-white py-16 dark:bg-gray-900">
+      <div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center">
             <p className="text-red-600 dark:text-red-400">{error}</p>
@@ -57,78 +57,75 @@ export default function BlogList() {
   }
 
   return (
-    <div className="bg-white py-16 dark:bg-gray-900">
+    <div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto flex max-w-2xl flex-col items-end justify-between gap-16 lg:mx-0 lg:max-w-none lg:flex-row">
-          <div className="w-full lg:max-w-lg lg:flex-auto">
-            <h2 className="text-3xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-4xl dark:text-white">
-              Expert Legal Content for Fontana Residents
-            </h2>
-            <p className="mt-6 text-xl/8 text-gray-600 dark:text-gray-400">
-              Our experienced legal team regularly publishes insights on car accident law, insurance claims, and your rights. Stay informed with the latest legal developments affecting Fontana drivers.
-            </p>
-            <img
-              alt="Legal consultation and car accident documentation"
-              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1344&h=1104&q=80"
-              className="mt-16 aspect-6/5 w-full rounded-2xl object-cover outline-1 -outline-offset-1 outline-black/5 lg:aspect-auto lg:h-[38rem] dark:outline-white/10"
-            />
+        <div className="mx-auto max-w-2xl lg:mx-0">
+          <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
+            Legal Insights & Resources
+          </h2>
+          <p className="mt-2 text-lg/8 text-gray-600 dark:text-gray-300">
+            Stay informed with expert insights on car accident law, insurance claims, and legal rights in Fontana and San Bernardino County.
+          </p>
+        </div>
+        
+        {blogPosts.length > 0 ? (
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 dark:border-gray-700">
+            {blogPosts.map((post) => (
+              <article key={post.slug} className="flex max-w-xl flex-col items-start justify-between">
+                <div className="flex items-center gap-x-4 text-xs">
+                  <time dateTime={post.publishDate} className="text-gray-500 dark:text-gray-400">
+                    {new Date(post.publishDate).toLocaleDateString('en-US', { 
+                      year: 'numeric', 
+                      month: 'short', 
+                      day: 'numeric' 
+                    })}
+                  </time>
+                  <span className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-800/60 dark:text-gray-300 dark:hover:bg-gray-800">
+                    Legal Advice
+                  </span>
+                </div>
+                <div className="group relative grow">
+                  <h3 className="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600 dark:text-white dark:group-hover:text-gray-300">
+                    <Link href={`/blog/${post.slug}`}>
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm/6 text-gray-600 dark:text-gray-400">
+                    {post.excerpt}
+                  </p>
+                </div>
+                <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
+                  <img 
+                    alt="Fontana Car Accident Legal Team"
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    className="size-10 rounded-full bg-gray-50 dark:bg-gray-800" 
+                  />
+                  <div className="text-sm/6">
+                    <p className="font-semibold text-gray-900 dark:text-white">
+                      <span className="absolute inset-0" />
+                      Fontana Legal Team
+                    </p>
+                    <p className="text-gray-600 dark:text-gray-400">Car Accident Attorneys</p>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
-          <div className="w-full lg:max-w-xl lg:flex-auto">
-            <h3 className="sr-only">Recent Articles</h3>
-            {blogPosts.length > 0 ? (
-              <ul className="-my-8 divide-y divide-gray-100 dark:divide-gray-800">
-                {blogPosts.map((post) => (
-                  <li key={post.slug} className="py-8">
-                    <dl className="relative flex flex-wrap gap-x-3">
-                      <dt className="sr-only">Title</dt>
-                      <dd className="w-full flex-none text-lg font-semibold tracking-tight text-gray-900 dark:text-white">
-                        <Link href={`/blog/${post.slug}`} className="hover:text-indigo-600 dark:hover:text-indigo-400">
-                          {post.title}
-                          <span aria-hidden="true" className="absolute inset-0" />
-                        </Link>
-                      </dd>
-                      <dt className="sr-only">Description</dt>
-                      <dd className="mt-2 w-full flex-none text-base/7 text-gray-600 dark:text-gray-400">
-                        {post.excerpt || post.title}
-                      </dd>
-                      <dt className="sr-only">Published Date</dt>
-                      <dd className="mt-4 text-base/7 font-semibold text-gray-900 dark:text-white">
-                        {new Date(post.publishDate).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}
-                      </dd>
-                      <dt className="sr-only">Reading Time</dt>
-                      <dd className="mt-4 flex items-center gap-x-3 text-base/7 text-gray-500 dark:text-gray-400">
-                        <svg
-                          viewBox="0 0 2 2"
-                          aria-hidden="true"
-                          className="size-0.5 flex-none fill-gray-300 dark:fill-gray-600"
-                        >
-                          <circle r={1} cx={1} cy={1} />
-                        </svg>
-                        5 min read
-                      </dd>
-                    </dl>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <div className="text-center py-8">
-                <p className="text-gray-600 dark:text-gray-400">No articles published yet.</p>
-                <p className="mt-2 text-sm text-gray-500 dark:text-gray-500">Check back soon for expert legal insights!</p>
-              </div>
-            )}
-            <div className="mt-8 flex border-t border-gray-100 pt-8 dark:border-gray-800">
-              <Link
-                href="/#contact"
-                className="text-sm/6 font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300"
-              >
-                Need Legal Help? Get Free Consultation <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </div>
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-gray-600 dark:text-gray-400">No articles published yet.</p>
+            <p className="mt-2 text-sm text-gray-500 dark:text-gray-500">Check back soon for expert legal insights!</p>
           </div>
+        )}
+        
+        <div className="mt-16 text-center">
+          <Link
+            href="/#contact"
+            className="inline-flex items-center rounded-lg bg-indigo-600 px-6 py-3 text-base font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Need Legal Help? Get Free Consultation
+          </Link>
         </div>
       </div>
     </div>
