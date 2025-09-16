@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Component Test</title>
+    
+    <!-- Option 1: CDN (fastest to test) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Option 2: Custom config for our brand colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-green': '#00c853',
+                        'brand-green-light': '#00e676',
+                        'legal-dark': '#1a1a1a',
+                        'legal-gray': '#2a2a2a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-legal-dark">
+    
+    <!-- Original Tailwind Component -->
+    <div class="overflow-hidden bg-gray-900 py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <div class="lg:pt-4 lg:pr-8">
+                    <div class="lg:max-w-lg">
+                        <h2 class="text-base/7 font-semibold text-indigo-400">Legal Excellence</h2>
+                        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Better Legal Representation</p>
+                        <p class="mt-6 text-lg/8 text-gray-300">Our experienced attorneys provide comprehensive legal support with proven results and personalized attention to every case.</p>
+                        <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
+                            <div class="relative pl-9">
+                                <dt class="inline font-semibold text-white">
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="absolute top-1 left-1 size-5 text-brand-green">
+                                        <path d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                    No Win, No Fee.
+                                </dt>
+                                <dd class="inline">We work on a contingency fee basis - you don't pay unless we win your case. No upfront costs or hidden fees.</dd>
+                            </div>
+                            <div class="relative pl-9">
+                                <dt class="inline font-semibold text-white">
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="absolute top-1 left-1 size-5 text-brand-green">
+                                        <path d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                    Free Consultation.
+                                </dt>
+                                <dd class="inline">Get expert legal advice with no upfront costs or obligations. We'll evaluate your case for free.</dd>
+                            </div>
+                            <div class="relative pl-9">
+                                <dt class="inline font-semibold text-white">
+                                    <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="absolute top-1 left-1 size-5 text-brand-green">
+                                        <path d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
+                                        <path d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                    </svg>
+                                    Proven Results.
+                                </dt>
+                                <dd class="inline">Track record of successful settlements and verdicts. We've recovered millions for our clients.</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <img width="800" height="800" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop" alt="Legal office screenshot" class="w-full max-w-none rounded-xl shadow-xl ring-1 ring-white/10" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Hybrid Approach: Same component with our brand colors -->
+    <div class="overflow-hidden bg-legal-gray py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <div class="lg:pt-4 lg:pr-8">
+                    <div class="lg:max-w-lg">
+                        <h2 class="text-base/7 font-semibold text-brand-green">Fontana Legal Services</h2>
+                        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Expert Car Accident Lawyers</p>
+                        <p class="mt-6 text-lg/8 text-gray-300">Experienced Fontana car accident attorneys ready to fight for your compensation. Free consultation, no fees unless we win.</p>
+                        
+                        <!-- CTA Button with Tailwind -->
+                        <div class="mt-8">
+                            <button class="bg-gradient-to-r from-brand-green to-brand-green-light text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                                Start Free Case Evaluation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center bg-legal-dark rounded-xl p-8">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">⚖️</div>
+                        <p class="text-white text-xl font-semibold">Legal Consultation</p>
+                        <p class="text-gray-300 mt-2">Available 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Notes Section -->
+    <div class="bg-yellow-900 border-l-4 border-yellow-400 p-4 m-8">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.485 3.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.19-1.458-1.515-2.625L8.485 3.495zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm text-yellow-700">
+                    <strong>Performance Impact:</strong> This page loads ~100KB+ of Tailwind CSS. For production sites requiring A+ PageSpeed scores, consider converting to vanilla CSS or using critical CSS extraction.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

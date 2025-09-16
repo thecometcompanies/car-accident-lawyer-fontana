@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+Allow: /assets/
+Allow: /content/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+
+# Block sensitive areas
+Disallow: /api/webhooks/
+Disallow: /.vercel/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://car-accident-lawyer-fontana.vercel.app/sitemap.xml
+
+# Crawl delay (optional - removes for faster indexing)
+# Crawl-delay: 1

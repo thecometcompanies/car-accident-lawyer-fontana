@@ -1,0 +1,528 @@
+{
+  "meta": {
+    "title": "Fontana Car Accident Lawyer - Free Consultation | Expert Personal Injury Attorney",
+    "description": "Experienced Fontana car accident lawyers. Free consultation, no fees unless we win.",
+    "keywords": "fontana car accident lawyer, car accident attorney san bernardino county, personal injury lawyer fontana"
+  },
+  "hero": {
+    "headline": "Need a Lawyer for a Car Accident in Fontana? \n ",
+    "subtitle": "We will match you with the best Accident Attorney to get the Compensation You Deserve",
+    "subheadline": "Free consultation with experienced Fontana car accident lawyers. No fees unless we win your case.",
+    "primaryCTA": {
+      "text": "Start Free Case Evaluation",
+      "action": "scroll-to-form"
+    },
+    "secondaryCTA": {
+      "text": "Get Help Now",
+      "action": "modal"
+    }
+  },
+  "form": {
+    "title": "Free Case Evaluation",
+    "steps": {
+      "1": {
+        "title": "Contact Information",
+        "subtitle": "Start your free consultation - we'll contact you within 1 hour.",
+        "fields": [
+          {
+            "id": "email",
+            "label": "Email Address",
+            "type": "email",
+            "required": true,
+            "validation": "email"
+          },
+          {
+            "id": "phone",
+            "label": "Phone Number",
+            "type": "tel",
+            "required": true,
+            "validation": "phone"
+          },
+          {
+            "id": "preferredContact",
+            "label": "Preferred Contact Method",
+            "type": "radio",
+            "required": true,
+            "options": [
+              {"value": "email", "label": "Email"},
+              {"value": "phone", "label": "Phone Call"},
+              {"value": "text", "label": "Text Message"}
+            ]
+          }
+        ],
+        "button": {
+          "text": "Continue to Case Details →"
+        }
+      },
+      "2": {
+        "title": "Tell Us About Your Case",
+        "subtitle": "Help us understand your situation for the best legal advice.",
+        "fields": [
+          {
+            "id": "firstName",
+            "label": "First Name",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "lastName",
+            "label": "Last Name", 
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "incidentDate",
+            "label": "Date of Incident",
+            "type": "date",
+            "required": true
+          },
+          {
+            "id": "accidentType",
+            "label": "Type of Accident",
+            "type": "select",
+            "required": true,
+            "options": [
+              {"value": "", "label": "Select accident type..."},
+              {"value": "motor-vehicle", "label": "Motor Vehicle Accident"},
+              {"value": "motorcycle", "label": "Motorcycle Accident"},
+              {"value": "pedestrian", "label": "Pedestrian Accident"},
+              {"value": "bicycle", "label": "Bicycle Accident"},
+              {"value": "slip-fall", "label": "Slip and Fall"},
+              {"value": "other", "label": "Other"}
+            ]
+          },
+          {
+            "id": "injuryDescription",
+            "label": "Describe Your Injuries",
+            "type": "textarea",
+            "required": true,
+            "minLength": 50,
+            "placeholder": "Please describe your injuries and how they occurred..."
+          },
+          {
+            "id": "medicalTreatment",
+            "label": "Medical Treatment Received (check all that apply)",
+            "type": "checkbox",
+            "options": [
+              {"value": "emergency-room", "label": "Emergency Room"},
+              {"value": "hospitalization", "label": "Hospitalization"},
+              {"value": "physical-therapy", "label": "Physical Therapy"},
+              {"value": "ongoing", "label": "Ongoing Treatment"},
+              {"value": "none", "label": "No Treatment Yet"}
+            ]
+          },
+          {
+            "id": "hasInsurance",
+            "label": "Insurance Information",
+            "type": "select",
+            "required": true,
+            "options": [
+              {"value": "", "label": "Select..."},
+              {"value": "yes", "label": "Yes, I have insurance"},
+              {"value": "no", "label": "No insurance"},
+              {"value": "unsure", "label": "Unsure"}
+            ]
+          },
+          {
+            "id": "policeReport",
+            "label": "Police Report Filed",
+            "type": "radio",
+            "required": true,
+            "options": [
+              {"value": "yes", "label": "Yes"},
+              {"value": "no", "label": "No"},
+              {"value": "unknown", "label": "Unknown"}
+            ]
+          },
+          {
+            "id": "faultAssignment",
+            "label": "Fault Assignment",
+            "type": "radio",
+            "required": true,
+            "options": [
+              {"value": "other", "label": "Other party at fault"},
+              {"value": "mutual", "label": "Mutual fault"},
+              {"value": "unsure", "label": "Unsure"},
+              {"value": "me", "label": "I may be at fault"}
+            ]
+          },
+          {
+            "id": "additionalDetails",
+            "label": "Additional Details (Optional)",
+            "type": "textarea",
+            "maxLength": 1000,
+            "placeholder": "Any additional information about your case..."
+          }
+        ],
+        "buttons": {
+          "back": "← Back",
+          "submit": "Submit Case Information"
+        }
+      }
+    }
+  },
+  "trustSignals": {
+    "title": "Why Choose Our Fontana Car Accident Lawyers?",
+    "items": [
+      {
+        "icon": "⚖️",
+        "title": "No Win, No Fee",
+        "description": "We work on a contingency fee basis - you don't pay unless we win your case."
+      },
+      {
+        "icon": "💬",
+        "title": "Free Consultation",
+        "description": "Get expert legal advice with no upfront costs or obligations."
+      },
+      {
+        "icon": "🏛️",
+        "title": "Local Expertise", 
+        "description": "Deep knowledge of Fontana and San Bernardino County courts and laws."
+      },
+      {
+        "icon": "🏆",
+        "title": "Proven Results",
+        "description": "Track record of successful settlements and verdicts for our clients."
+      }
+    ]
+  },
+  "attorneys": {
+    "title": "Meet Your Fontana Car Accident Legal Team",
+    "subtitle": "Experienced attorneys with proven track records in personal injury law",
+    "profiles": [
+      {
+        "name": "Michael Rodriguez",
+        "title": "Senior Partner & Lead Trial Attorney",
+        "credentials": [
+          "California State Bar #123456",
+          "Certified Personal Injury Specialist", 
+          "Super Lawyers 2020-2024",
+          "AVVO 10.0 Rating"
+        ],
+        "experience": "25+ years fighting for accident victims",
+        "education": "USC Gould School of Law, J.D.",
+        "specialties": ["Motor Vehicle Accidents", "Wrongful Death", "Catastrophic Injuries"],
+        "bio": "Michael has recovered over $50 million for clients and has never lost a jury trial. He personally handles all major cases and ensures maximum compensation for every client."
+      },
+      {
+        "name": "Sarah Chen",
+        "title": "Senior Associate & Settlement Specialist", 
+        "credentials": [
+          "California State Bar #789012",
+          "Board Certified Trial Advocate",
+          "Million Dollar Advocates Forum",
+          "Top 40 Under 40 Attorney"
+        ],
+        "experience": "15+ years in personal injury law",
+        "education": "UCLA School of Law, J.D.",
+        "specialties": ["Insurance Negotiations", "Medical Malpractice", "Premises Liability"],
+        "bio": "Sarah's strategic approach to insurance negotiations has result settlements averaging 3.5x higher than initial offers. She ensures clients receive full compensation for medical expenses and pain and suffering."
+      }
+    ]
+  },
+  "cities": {
+    "title": "Complete San Bernardino County Coverage",
+    "subtitle": "Our attorney network serves all major cities with local expertise",
+    "areas": [
+      {
+        "name": "Fontana",
+        "active": true,
+        "population": "208,393",
+        "courts": "Rancho Cucamonga District Court",
+        "description": "Our primary service area with extensive local knowledge of traffic patterns, accident hotspots, and court procedures.",
+        "highlights": [
+          "500+ cases successfully matched",
+          "Average 45-minute response time",
+          "Local traffic accident expertise",
+          "Direct courthouse relationships"
+        ]
+      },
+      {
+        "name": "Rancho Cucamonga",
+        "active": false,
+        "population": "177,751",
+        "courts": "Rancho Cucamonga District Court",
+        "description": "Major commercial hub with heavy traffic on I-10 and I-210 corridors. Our attorneys specialize in complex intersection accidents.",
+        "highlights": [
+          "High-volume traffic accident cases",
+          "Commercial vehicle expertise",
+          "Freeway accident specialists",
+          "Local medical network access"
+        ]
+      },
+      {
+        "name": "Ontario",
+        "active": false,
+        "population": "175,265",
+        "courts": "West District Court",
+        "description": "Airport vicinity with unique aviation and commercial trucking accident scenarios requiring specialized legal knowledge.",
+        "highlights": [
+          "Airport-related accident expertise",
+          "Commercial trucking cases",
+          "International Airport proximity",
+          "Specialized injury treatment centers"
+        ]
+      },
+      {
+        "name": "San Bernardino",
+        "active": false,
+        "population": "222,101",
+        "courts": "San Bernardino Superior Court",
+        "description": "County seat with direct access to Superior Court. Our attorneys handle complex litigation and appeals.",
+        "highlights": [
+          "Superior Court litigation",
+          "Complex case specialists",
+          "Appeals court experience",
+          "Government entity cases"
+        ]
+      },
+      {
+        "name": "Rialto",
+        "active": false,
+        "population": "103,132",
+        "courts": "Fontana District Court",
+        "description": "Industrial corridor with heavy truck traffic. Specialized experience in commercial vehicle and workplace accidents.",
+        "highlights": [
+          "Industrial accident cases",
+          "Heavy truck collisions",
+          "Workplace injury expertise",
+          "Railroad crossing accidents"
+        ]
+      },
+      {
+        "name": "Colton",
+        "active": false,
+        "population": "54,215",
+        "courts": "San Bernardino District Court",
+        "description": "Strategic location near major freeways with unique pedestrian and bicycle accident challenges in urban areas.",
+        "highlights": [
+          "Pedestrian accident specialists",
+          "Bicycle injury cases",
+          "Urban intersection expertise",
+          "Community-focused representation"
+        ]
+      },
+      {
+        "name": "Upland",
+        "active": false,
+        "population": "79,040",
+        "courts": "Rancho Cucamonga District Court",
+        "description": "Residential community with school zone accidents and suburban intersection challenges requiring local knowledge.",
+        "highlights": [
+          "School zone accident cases",
+          "Suburban intersection expertise",
+          "Residential area specialists",
+          "Family-focused legal services"
+        ]
+      },
+      {
+        "name": "Chino",
+        "active": false,
+        "population": "91,403",
+        "courts": "Chino District Court",
+        "description": "Agricultural and residential mix with unique rural road and agricultural vehicle accident scenarios.",
+        "highlights": [
+          "Rural road accident cases",
+          "Agricultural vehicle expertise",
+          "Mixed-use area specialists",
+          "Local community knowledge"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "phone": "(XXX) XXX-XXXX",
+    "email": "legal@fontanalawyers.com",
+    "address": {
+      "street": "123 Main Street",
+      "city": "Fontana",
+      "state": "CA",
+      "zip": "92335"
+    }
+  },
+  "legal": {
+    "firmName": "Fontana Car Accident Lawyers",
+    "disclaimers": [
+      "No attorney-client relationship is formed by using this website.",
+      "Results may vary depending on your particular facts and legal circumstances.",
+      "Attorney advertising. Prior results do not guarantee a similar outcome."
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How does your attorney matching service work?",
+        "answer": "Our process is simple: 1) Submit your case details through our secure form 2) We review your information within 30 minutes 3) We match you with 1-3 pre-screened Fontana car accident attorneys based on your specific needs 4) Attorneys contact you directly within 1 hour 5) You choose the lawyer that feels right for your case. Our service is 100% free to you."
+      },
+      {
+        "question": "What should I do immediately after a car accident in Fontana?",
+        "answer": "1. Ensure safety and call 911 if anyone is injured. 2. Move to a safe location if possible. 3. Call police to file a report. 4. Exchange insurance information with all parties. 5. Document the scene with photos and witness information. 6. Seek medical attention even if injuries seem minor. 7. Contact our matching service to get connected with a qualified Fontana car accident lawyer before speaking with insurance companies."
+      },
+      {
+        "question": "How quickly will I be connected with a lawyer?",
+        "answer": "We guarantee attorney contact within 1 hour of submitting your case details. Our network of pre-screened attorneys are available 24/7 and understand the urgency of accident cases. Time is critical after an accident - evidence disappears, witnesses forget details, and insurance companies start building their defense immediately."
+      },
+      {
+        "question": "Are the attorneys in your network experienced with Fontana cases?",
+        "answer": "Absolutely. All attorneys in our network are licensed California attorneys with specific experience in San Bernardino County courts. They know the local judges, court procedures, traffic patterns, and common accident locations in Fontana. Many have offices in or near Fontana and have handled hundreds of cases in the area."
+      },
+      {
+        "question": "How much does your matching service cost?",
+        "answer": "Our attorney matching service is completely free to accident victims. We are paid by the attorneys in our network, not by you. The attorneys we connect you with typically work on contingency fees, meaning you pay no attorney fees unless they win your case. There are never any upfront costs or hidden fees for our service."
+      },
+      {
+        "question": "What types of car accident cases do you handle?",
+        "answer": "We match attorneys for all types of vehicle accidents including: motor vehicle collisions, motorcycle accidents, truck accidents, pedestrian accidents, bicycle accidents, rideshare accidents (Uber/Lyft), hit-and-run cases, uninsured motorist claims, and wrongful death cases. Our attorneys handle everything from minor fender-benders to catastrophic injuries."
+      },
+      {
+        "question": "How long do I have to file a car accident claim in California?",
+        "answer": "In California, you have 2 years from the date of the accident to file a personal injury lawsuit (statute of limitations). However, you should get connected with an attorney immediately as evidence can be lost and witnesses' memories fade. Insurance claims should be filed as soon as possible, typically within 30 days of the accident."
+      },
+      {
+        "question": "What if the other driver doesn't have insurance in California?",
+        "answer": "You may still have options through your own uninsured motorist coverage, underinsured motorist coverage, or by pursuing the at-fault driver's personal assets. In some cases, other parties (employers, property owners, vehicle manufacturers) may share liability. The attorneys we connect you with know how to identify all possible sources of compensation."
+      },
+      {
+        "question": "What compensation can I receive for my car accident injuries?",
+        "answer": "You may be entitled to economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment). In severe cases involving gross negligence, punitive damages may apply. Attorneys in our network have recovered settlements ranging from $50,000 to $2.4 million depending on case specifics."
+      },
+      {
+        "question": "Will I be pressured to hire a specific attorney?",
+        "answer": "Never. Our goal is to connect you with qualified attorneys, not pressure you into hiring someone. We typically provide 1-3 attorney matches based on your case specifics. You speak with each attorney, ask questions, and choose who feels right for your situation. You're under no obligation to hire any attorney we refer."
+      },
+      {
+        "question": "What information do I need to provide for attorney matching?",
+        "answer": "We need basic information about your accident: date and location, type of vehicles involved, brief description of injuries, insurance information, and whether police were called. The more details you provide, the better we can match you with the right attorney. All information is kept confidential and secure."
+      },
+      {
+        "question": "Do you work with attorneys outside of Fontana?",
+        "answer": "Yes, our network includes attorneys throughout San Bernardino County including Rancho Cucamonga, Ontario, San Bernardino, Rialto, Colton, and surrounding areas. However, we prioritize attorneys familiar with Fontana courts and local accident patterns when possible."
+      },
+      {
+        "question": "What if I'm not happy with the attorney you matched me with?",
+        "answer": "If the initial match isn't the right fit, contact us immediately. We can provide additional attorney options from our network. Remember, you're never locked into working with any attorney. You have the right to change representation at any time during your case."
+      },
+      {
+        "question": "How do you screen attorneys for your network?",
+        "answer": "We verify all attorneys are licensed in good standing with the California State Bar, have specific personal injury experience, maintain malpractice insurance, and have positive client reviews. We also check their track record with settlements and verdicts, their reputation in the legal community, and their commitment to client communication."
+      },
+      {
+        "question": "What if my case is too small for an attorney to take?",
+        "answer": "We work with attorneys who handle cases of all sizes. Even minor accidents can result in significant medical bills and lost wages. Many attorneys will evaluate any case where there are injuries and damages. During our matching process, we'll be honest about your case's potential and connect you with attorneys appropriate for your situation."
+      },
+      {
+        "question": "Can you help if my accident happened outside of Fontana?",
+        "answer": "Yes, we can help with accidents throughout Southern California. While we specialize in Fontana and San Bernardino County, our network includes attorneys licensed throughout California who can handle cases in Los Angeles, Riverside, Orange County, and other areas."
+      },
+      {
+        "question": "What happens if I need immediate medical attention?",
+        "answer": "Your health comes first. Seek immediate medical care for any injuries. Many attorneys in our network can help arrange medical treatment through providers who accept liens (no upfront payment required). They can also guide you on protecting your legal rights while focusing on your recovery."
+      },
+      {
+        "question": "Is my personal information secure when I submit my case details?",
+        "answer": "Absolutely. We use bank-level encryption to protect all personal information submitted through our platform. Your case details are only shared with pre-screened attorneys in our network who have signed confidentiality agreements. We never sell or share your information with third parties for marketing purposes."
+      },
+      {
+        "question": "What makes your attorney network different from other referral services?",
+        "answer": "Unlike generic referral services, we specialize exclusively in personal injury and car accident cases in San Bernardino County. Every attorney in our network has been personally vetted for their track record, client satisfaction, and local court experience. We also provide ongoing case monitoring and client support throughout the legal process."
+      },
+      {
+        "question": "How do I know if I have a strong case?",
+        "answer": "Several factors indicate a strong personal injury case: clear fault by another party, documented injuries requiring medical treatment, police reports, witness testimony, and compliance with statute of limitations. The attorneys we connect you with will provide a free case evaluation to assess your claim's strength and potential value."
+      },
+      {
+        "question": "What should I avoid doing after a car accident?",
+        "answer": "Don't admit fault or apologize at the scene, don't sign any documents from insurance companies without attorney review, don't give recorded statements to opposing insurance companies, don't post about your accident on social media, don't delay seeking medical attention, and don't wait too long to contact an attorney."
+      },
+      {
+        "question": "Can I still pursue a claim if I was partially at fault?",
+        "answer": "Yes, California follows comparative negligence laws, meaning you can still recover damages even if you were partially at fault. Your compensation will be reduced by your percentage of fault. For example, if you're found 25% at fault, you can still recover 75% of your damages."
+      },
+      {
+        "question": "How is the value of my personal injury claim calculated?",
+        "answer": "Claim value includes economic damages (medical bills, lost wages, property damage) and non-economic damages (pain and suffering, emotional distress, loss of enjoyment of life). Factors include injury severity, treatment duration, impact on daily activities, lost earning capacity, and degree of fault. Experienced attorneys use proven formulas and case precedents to maximize your settlement."
+      },
+      {
+        "question": "What happens if the insurance company denies my claim?",
+        "answer": "If an insurance company denies your claim, the attorneys in our network can file an appeal, provide additional evidence, negotiate directly with adjusters, or file a lawsuit if necessary. Many initially denied claims are successfully overturned with proper legal representation and documentation."
+      },
+      {
+        "question": "How long does it typically take to resolve a car accident case?",
+        "answer": "Simple cases with clear fault and minor injuries may resolve in 3-6 months. Complex cases involving serious injuries, disputed fault, or multiple parties can take 12-24 months or longer. Your attorney will provide realistic timelines based on your specific circumstances and work to expedite your case when possible."
+      },
+      {
+        "question": "Will I have to go to court for my car accident case?",
+        "answer": "Most personal injury cases (about 95%) settle out of court through negotiations. However, if the insurance company won't offer fair compensation, filing a lawsuit and potentially going to trial may be necessary. Your attorney will prepare your case thoroughly and advise you on the best strategy for maximum recovery."
+      },
+      {
+        "question": "What if the at-fault driver's insurance coverage isn't enough?",
+        "answer": "If the at-fault driver has insufficient insurance, you may recover additional compensation through your own underinsured motorist coverage, the driver's personal assets, or by identifying other liable parties (employers, property owners, vehicle manufacturers). Experienced attorneys know how to find all available sources of compensation."
+      },
+      {
+        "question": "Can I change attorneys if I'm not satisfied with my representation?",
+        "answer": "Yes, you have the right to change attorneys at any time. If you're unsatisfied with an attorney we referred, contact us immediately. We can provide alternative options from our network. Your new attorney will typically handle the transition and may need to pay your previous attorney for work already completed."
+      },
+      {
+        "question": "What expenses will I be responsible for during my case?",
+        "answer": "Most personal injury attorneys work on contingency fees, meaning you pay no attorney fees unless they win. However, you may be responsible for case expenses like medical records, expert witnesses, and court filing fees. Many attorneys advance these costs and deduct them from your settlement, so you pay nothing upfront."
+      },
+      {
+        "question": "How do medical liens work in personal injury cases?",
+        "answer": "Medical providers may place liens on your settlement to ensure payment for treatment. Your attorney will negotiate these liens to reduce the amounts owed, ensuring you keep more of your settlement. Many attorneys have relationships with providers who accept liens, allowing you to receive treatment without upfront payment."
+      },
+      {
+        "question": "What if I'm injured as a passenger in a car accident?",
+        "answer": "As an injured passenger, you're typically not at fault and can pursue claims against all negligent drivers involved. You may also have coverage under your own insurance policy. Passenger injury cases often result in higher settlements since fault is usually clear."
+      },
+      {
+        "question": "Can I pursue a claim for emotional trauma after a car accident?",
+        "answer": "Yes, emotional distress and psychological trauma are compensable damages in California. Conditions like PTSD, anxiety, depression, and phobias following an accident can significantly impact your life. Documentation from mental health professionals strengthens these claims."
+      },
+      {
+        "question": "What if the accident happened in a construction zone?",
+        "answer": "Construction zone accidents may involve multiple liable parties including contractors, the city, or state agencies. These cases require specialized knowledge of government liability and construction site safety regulations. The attorneys we work with have experience with these complex multi-party cases."
+      },
+      {
+        "question": "How do ride-share accident cases differ from regular car accidents?",
+        "answer": "Uber and Lyft accidents involve complex insurance coverage that depends on the driver's status (offline, waiting for rides, en route to pickup, or carrying passengers). These companies carry substantial insurance policies, but accessing coverage requires understanding their specific terms and conditions."
+      },
+      {
+        "question": "What should I do if I'm contacted by the other driver's insurance company?",
+        "answer": "Politely decline to give recorded statements and refer them to your attorney. Insurance adjusters are trained to minimize payouts and may use your statements against you. It's best to have legal representation handle all communications with opposing insurance companies."
+      },
+      {
+        "question": "Can I pursue a claim if the accident happened while I was working?",
+        "answer": "If injured while working, you may have both a workers' compensation claim against your employer and a personal injury claim against the at-fault driver. California allows you to pursue both simultaneously, potentially maximizing your total compensation."
+      },
+      {
+        "question": "What if the other driver fled the scene (hit-and-run)?",
+        "answer": "Hit-and-run cases can still result in compensation through your uninsured motorist coverage. Your attorney will work with police investigators to locate the at-fault driver and can help you access all available insurance coverage, including your own policy benefits."
+      },
+      {
+        "question": "How do traffic camera and dashcam footage affect my case?",
+        "answer": "Video evidence is extremely valuable in establishing fault and the severity of impact. Your attorney will work quickly to preserve footage from traffic cameras, nearby businesses, and dashcams before it's automatically deleted. This evidence often leads to faster, higher settlements."
+      },
+      {
+        "question": "What if I have pre-existing injuries that were worsened by the accident?",
+        "answer": "You can still pursue compensation for the aggravation of pre-existing conditions. California's 'eggshell skull' rule means at-fault parties are responsible for all consequences of their actions, even if you were more susceptible to injury than the average person."
+      },
+      {
+        "question": "Can family members pursue claims for their losses after my accident?",
+        "answer": "Family members may pursue 'loss of consortium' claims for the impact your injuries have on your relationship, including loss of companionship, support, and services. Spouses and children can sometimes recover compensation for their own emotional and financial losses."
+      },
+      {
+        "question": "What happens to my case if the at-fault driver dies in the accident?",
+        "answer": "If the at-fault driver dies, claims can still be pursued against their estate and insurance coverage. The process involves additional legal procedures, but experienced attorneys know how to navigate wrongful death and estate proceedings to ensure you receive fair compensation."
+      },
+      {
+        "question": "How do weather conditions affect fault determination in accidents?",
+        "answer": "While bad weather doesn't automatically excuse negligent driving, it can affect fault percentages. Drivers have a duty to adjust their driving for conditions. Your attorney will investigate whether the other driver was driving too fast for conditions or failed to maintain proper control of their vehicle."
+      },
+      {
+        "question": "What if my car accident involved a commercial truck or delivery vehicle?",
+        "answer": "Commercial vehicle accidents involve federal regulations, higher insurance limits, and potential employer liability. These cases often result in larger settlements but require attorneys experienced with trucking regulations, logbook violations, and commercial insurance policies."
+      }
+    ]
+  }
+}
