@@ -10,15 +10,12 @@
     },
     "api/webhooks/step2.js": {
       "maxDuration": 10
-    },
-    "api/cron/daily-blog.js": {
-      "maxDuration": 60
     }
   },
   "crons": [
     {
       "path": "/api/cron/daily-blog",
-      "schedule": "0 5 * * *"
+      "schedule": "0 4 * * *"
     }
   ],
   "rewrites": [
