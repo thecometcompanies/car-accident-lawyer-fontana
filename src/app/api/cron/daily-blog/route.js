@@ -1,6 +1,6 @@
 /**
  * Next.js App Router Cron Function - Daily Blog Post Generation
- * Scheduled to run daily at 5 PM UTC (10 AM PDT)
+ * Scheduled to run daily at 5 AM UTC (9 PM PST)
  */
 
 import { NextResponse } from 'next/server'

@@ -60,8 +60,8 @@ Headers: Authorization: Bearer kpkyHkxHKLM0vOkdehKLBKFz+Uml1PlKAmIVfrOyFaY=
 ```
 
 ## 📅 **Cron Schedule**
-- **Runs daily at**: 5:00 PM UTC (10:00 AM PDT)
-- **Next run**: Tomorrow at 10:00 AM PDT
+- **Runs daily at**: 5:00 AM UTC (9:00 PM PST)
+- **Next run**: Today at 9:00 PM PST
 - **Posts appear at**: `https://www.accidentlawyerfontana.com/blog/[slug]`
 
 ## ✅ **Success Indicators**
