@@ -47,6 +47,20 @@ class BlogPostGenerator {
       // Select random topic
       const topic = this.topics[Math.floor(Math.random() * this.topics.length)];
       
+      // Get existing posts for internal linking
+      let existingPosts = [];
+      try {
+        existingPosts = await this.storage.getAllBlogPosts(10);
+      } catch (error) {
+        console.log('No existing posts found for linking');
+      }
+
+      const existingPostsList = existingPosts.map(post => ({
+        title: post.title,
+        slug: post.slug,
+        url: `https://www.accidentlawyerfontana.com/blog/${post.slug}`
+      }));
+      
       const prompt = `
         Write a comprehensive, SEO-optimized blog post for a Fontana car accident law firm with the following requirements:
 
@@ -60,23 +74,34 @@ class BlogPostGenerator {
         - Add call-to-action for free consultation
         - Include FAQ section with 5 relevant questions
         - Optimize for keywords: "fontana car accident lawyer", "car accident attorney fontana", "personal injury lawyer san bernardino county"
-        - Include local landmarks/roads when relevant (Sierra Avenue, Foothill Boulevard, I-10, etc.)
+        - Include local landmarks/roads when relevant (Sierra Avenue, Foothill Boulevard, I-10, Kaiser Permanente Fontana Medical Center, etc.)
+        
+        INTERNAL LINKING REQUIREMENTS:
+        - Include 3-5 internal links naturally within the content
+        - Use descriptive anchor text (not "click here")
+        - Link to related topics when mentioned
+        ${existingPostsList.length > 0 ? `
+        Available blog posts to link to:
+        ${existingPostsList.map(post => `- ${post.title} (${post.url})`).join('\n')}
+        ` : '- Note: No existing posts yet, include placeholder links like [Related: Understanding California Car Accident Laws]'}
 
         STRUCTURE:
         1. Compelling headline
         2. Introduction (hook + problem)
-        3. Main content sections (3-4 sections)
-        4. FAQ section
-        5. Call-to-action conclusion
+        3. Main content sections (3-4 sections with internal links)
+        4. Related Articles section (list 3 related posts)
+        5. FAQ section
+        6. Call-to-action conclusion
 
         FORMAT: Return as JSON with this structure:
         {
           "title": "SEO-optimized title",
           "slug": "url-friendly-slug",
           "excerpt": "Brief 160-character description",
-          "content": "Full HTML content",
+          "content": "Full HTML content with internal links",
           "keywords": ["keyword1", "keyword2"],
           "faq": [{"question": "Q", "answer": "A"}],
+          "relatedPosts": ["slug1", "slug2", "slug3"],
           "publishDate": "${new Date().toISOString()}",
           "author": "Fontana Car Accident Legal Team"
         }
@@ -209,6 +234,21 @@ class BlogPostGenerator {
         
         ${post.content}
         
+        ${post.relatedPosts && post.relatedPosts.length > 0 ? `
+        <div class="related-posts" style="margin: 30px 0; padding: 20px; background: #f5f5f5; border-radius: 5px;">
+            <h2>Related Articles</h2>
+            <ul style="list-style: none; padding: 0;">
+                ${post.relatedPosts.map(slug => `
+                    <li style="margin: 10px 0;">
+                        <a href="/blog/${slug}" style="color: #007cba; text-decoration: none; font-weight: 500;">
+                            → Read: ${slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        </a>
+                    </li>
+                `).join('')}
+            </ul>
+        </div>
+        ` : ''}
+        
         <div class="faq">
             <h2>Frequently Asked Questions</h2>
             ${post.faq.map(item => `
@@ -222,8 +262,8 @@ class BlogPostGenerator {
         <div class="cta">
             <h3>Need Legal Help After a Car Accident?</h3>
             <p>Our experienced Fontana car accident lawyers are here to help. Free consultation, no fees unless we win.</p>
-            <a href="tel:XXX-XXX-XXXX">Call (XXX) XXX-XXXX Now</a> | 
-            <a href="/#contact">Free Case Evaluation</a>
+            <a href="tel:(909)XXX-XXXX">Call (909) XXX-XXXX Now</a> | 
+            <a href="/#contact-form">Free Case Evaluation</a>
         </div>
     </article>
 </body>
