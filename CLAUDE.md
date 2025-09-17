@@ -4,6 +4,7 @@ This file provides guidance to Claude Code when building the Fontana Car Acciden
 
 ## Project Overview
 
+**Production Domain**: https://www.accidentlawyerfontana.com  
 **Site Type**: One-page attorney website with multi-step personal injury intake form  
 **Primary Goal**: Generate qualified leads through professional presentation and streamlined intake process  
 **Performance Target**: Google PageSpeed Insights A+ scores across all metrics (Mobile & Desktop)  

@@ -5,7 +5,7 @@ export async function GET() {
   try {
     const storage = new BlogStorage()
     const posts = await storage.getAllBlogPosts(100) // Get all posts for sitemap
-    const baseUrl = 'https://car-accident-lawyer-fontana.vercel.app'
+    const baseUrl = 'https://www.accidentlawyerfontana.com'
     
     // Generate sitemap XML
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -87,13 +87,13 @@ export async function GET() {
     const basicSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://car-accident-lawyer-fontana.vercel.app/</loc>
+        <loc>https://www.accidentlawyerfontana.com/</loc>
         <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://car-accident-lawyer-fontana.vercel.app/blog</loc>
+        <loc>https://www.accidentlawyerfontana.com/blog</loc>
         <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
